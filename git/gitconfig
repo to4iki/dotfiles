@@ -1,0 +1,36 @@
+[user]
+  name = tsk takezawa
+  email = tsk.take815@gmail.com
+[github]
+  user = to4iki
+[color]
+  status = auto
+  diff = auto
+[core]
+  pager = less
+  editor = vim
+[alias]
+  s = status -sb
+  l = log --decorate
+  lp = log --decorate --stat -p
+  ll = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
+  d = diff --histogram
+  b = branch --verbose --verbose --color
+  br = branch -avv
+  info = remote show origin
+  g = grep -n -p --color --heading --break
+  co = checkout
+  ad = add
+  ci = commit -v
+  fixup = commit --amend -C HEAD
+  tb = git-tb
+  bk = git-bk
+  gsub = git-gsub
+  see = browse
+[tig "bind"]
+  generic = g move-first-line
+  generic = G move-last-line
+[http]
+  sslVerify = false
+[credential]
+  helper = osxkeychain

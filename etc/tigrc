@@ -1,0 +1,30 @@
+# ----------------------------------------
+# Visual
+# ----------------------------------------
+# display the commit id in the main view
+set show-id = yes
+
+# ----------------------------------------
+# KeyBindings
+# ----------------------------------------
+bind diff ; view-next
+bind diff l scroll-right
+bind diff h scroll-left
+# disable the bind generic G !git gc
+bind generic G none
+bind generic g move-first-line
+bind generic G move-last-line
+
+# open repository at github
+bind generic ^ !@hub browse
+# open issues at github
+bind generic - !@hub browse -- issues
+# open commit at github
+bind generic o !@hub browse -- commit/%(commit)
+
+# 選択したcommitのci-statusを確認
+bind generic = !hub ci-status %(commit)
+# 選択したbranchをcompareに送る
+bind branch [ !@hub compare %(branch)
+# 現在のbranchからpull-requestを作成
+bind main { !hub pull-request
