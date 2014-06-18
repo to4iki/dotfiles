@@ -11,11 +11,11 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 ZSH_THEME="beer"
 
 plugins=(
+global
 alias
 function
 git
 npm
-global
 )
 
 source $ZSH/oh-my-zsh.sh

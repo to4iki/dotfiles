@@ -38,6 +38,7 @@ install wget || true
 install rbenv || true
 install ruby-build || true
 install go || true
+install python || true
 
 ## DevOps
 install docker      || true

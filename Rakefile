@@ -6,6 +6,7 @@ OS = `uname`
 
 ETC_ROOT    =  File.join(File.dirname(__FILE__), "etc")
 GIT_ROOT    =  File.join(File.dirname(__FILE__), "git")
+PERCOL_ROOT =  File.join(File.dirname(__FILE__), "percol")
 TMUX_ROOT   =  File.join(File.dirname(__FILE__), "tmux")
 VIM_ROOT    =  File.join(File.dirname(__FILE__), "vim")
 ZSH_ROOT    =  File.join(File.dirname(__FILE__), "zsh")
@@ -20,6 +21,7 @@ cleans = [
           ".pryrc",
           ".tigrc",
           ".gitconfig",
+          ".percol.d",
           ".tmux.conf",
           ".vimrc",
           ".zshrc",
@@ -31,7 +33,7 @@ cleans = [
 CLEAN.concat(cleans.map{|c| File.join(HOME,c)})
 
 task :default => :all
-task :all => ["etc:link", "git:link", "tmux:link", "vim:link", "zsh:link"]
+task :all => ["etc:link", "percol:link", "git:link", "tmux:link", "vim:link", "zsh:link"]
 
 namespace :etc do
   task :link do
@@ -43,6 +45,13 @@ namespace :git do
   desc "Create symbolic link to HOME"
   task :link do
     same_name_symlinks GIT_ROOT, ["gitconfig"]
+  end
+end
+
+namespace :percol do
+  desc "Create symbolic link to HOME"
+  task :link do
+    symlink_ PERCOL_ROOT, File.join(HOME, ".percol.d")
   end
 end
 
@@ -61,7 +70,7 @@ namespace :vim do
 end
 
 namespace :zsh do
-  desc "Create symbolic link to HOME/.zsh"
+  desc "Create symbolic link to HOME"
   task :link => [File.join(HOME,".oh-my-zsh")] do
     symlink_ File.join(ZSH_ROOT, "zshrc"), File.join(HOME, ".zshrc")
     symlink_ File.join(ZSH_ROOT, "zshenv"), File.join(HOME, ".zshenv")
