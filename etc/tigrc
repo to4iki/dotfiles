@@ -14,6 +14,9 @@ bind diff h scroll-left
 bind generic G none
 bind generic g move-first-line
 bind generic G move-last-line
+# Rで選択した行よりも上を全部 rebase -i
+bind main R !git rebase -i %(commit)
+bind diff R !git rebase -i %(commit)
 
 # open repository at github
 bind generic ^ !@hub browse
@@ -21,10 +24,3 @@ bind generic ^ !@hub browse
 bind generic - !@hub browse -- issues
 # open commit at github
 bind generic o !@hub browse -- commit/%(commit)
-
-# 選択したcommitのci-statusを確認
-bind generic = !hub ci-status %(commit)
-# 選択したbranchをcompareに送る
-bind branch [ !@hub compare %(branch)
-# 現在のbranchからpull-requestを作成
-bind main { !hub pull-request

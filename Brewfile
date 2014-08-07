@@ -25,6 +25,7 @@ install git || true
 install gibo || true
 install hub || true
 install tig || true
+install git-now || true
 
 ## Utils
 install ag || true
