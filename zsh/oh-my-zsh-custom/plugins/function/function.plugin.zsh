@@ -42,29 +42,42 @@ zle -N git_status _git_status  # _git_status関数をgit_status widgetとして�
 bindkey '^G^S' git_status
 
 # ---------------------------------------------------
-# percol
+# peco
 # ---------------------------------------------------
-function percol_select_history() {
+setopt hist_ignore_all_dups
+
+function peco_select_history () {
     local tac
     if which tac > /dev/null; then
         tac="tac"
     else
         tac="tail -r"
     fi
-    BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
-    CURSOR=$#BUFFER         # move cursor
-    zle -R -c               # refresh
+    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
 }
-zle -N percol_select_history
-bindkey '^R' percol_select_history
+zle -N peco_select_history
+bindkey '^r' peco_select_history
 
-function percol-jump () {
-    local jump_dir=$(j | cut -d'/' -f2-| percol --query "$LBUFFER")
+function peco-jump () {
+    local jump_dir=$(j | cut -d'/' -f2-| peco --query "$LBUFFER")
     if [ -n "$jump_dir" ]; then
         BUFFER="cd /${jump_dir}"
         zle accept-line
     fi
     zle clear-screen
 }
-zle -N percol-jump
-bindkey '^j' percol-jump
+zle -N peco-jump
+bindkey '^j' peco-jump
+
+function peco-src () {
+    local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src

@@ -2,14 +2,15 @@
 require 'rake/clean'
 
 HOME = ENV["HOME"]
+CONFIG = HOME + "/.config"
 OS = `uname`
 
-ETC_ROOT    =  File.join(File.dirname(__FILE__), "etc")
-GIT_ROOT    =  File.join(File.dirname(__FILE__), "git")
-PERCOL_ROOT =  File.join(File.dirname(__FILE__), "percol")
-TMUX_ROOT   =  File.join(File.dirname(__FILE__), "tmux")
-VIM_ROOT    =  File.join(File.dirname(__FILE__), "vim")
-ZSH_ROOT    =  File.join(File.dirname(__FILE__), "zsh")
+ETC_ROOT  =  File.join(File.dirname(__FILE__), "etc")
+GIT_ROOT  =  File.join(File.dirname(__FILE__), "git")
+PECO_ROOT =  File.join(File.dirname(__FILE__), "peco")
+TMUX_ROOT =  File.join(File.dirname(__FILE__), "tmux")
+VIM_ROOT  =  File.join(File.dirname(__FILE__), "vim")
+ZSH_ROOT  =  File.join(File.dirname(__FILE__), "zsh")
 
 ZSH_DOT_FILES  =  %w{ zshrc zshenv }
 ETC_DOT_FILES  =  Dir.glob("etc" +  "/*").map{|path| File.basename(path)}
@@ -21,7 +22,7 @@ cleans = [
           ".pryrc",
           ".tigrc",
           ".gitconfig",
-          ".percol.d",
+          ".config/peco",
           ".tmux.conf",
           ".vimrc",
           ".zshrc",
@@ -33,7 +34,7 @@ cleans = [
 CLEAN.concat(cleans.map{|c| File.join(HOME,c)})
 
 task :default => :all
-task :all => ["etc:link", "percol:link", "git:link", "tmux:link", "vim:link", "zsh:link"]
+task :all => ["etc:link", "peco:link", "git:link", "tmux:link", "vim:link", "zsh:link"]
 
 namespace :etc do
   task :link do
@@ -48,10 +49,10 @@ namespace :git do
   end
 end
 
-namespace :percol do
+namespace :peco do
   desc "Create symbolic link to HOME"
   task :link do
-    symlink_ PERCOL_ROOT, File.join(HOME, ".percol.d")
+    symlink_ PECO_ROOT, File.join(CONFIG, "peco")
   end
 end
 
@@ -75,7 +76,6 @@ namespace :zsh do
     symlink_ File.join(ZSH_ROOT, "zshrc"), File.join(HOME, ".zshrc")
     symlink_ File.join(ZSH_ROOT, "zshenv"), File.join(HOME, ".zshenv")
     symlink_ File.join(ZSH_ROOT, "oh-my-zsh-custom"), File.join(HOME, ".oh-my-zsh-custom")
-    symlink_ File.join(ZSH_ROOT, "oh-my-zsh-theme","beer.zsh-theme"), File.join(HOME,".oh-my-zsh","themes","beer.zsh-theme")
   end
 
   desc "Download oh-my-zsh"

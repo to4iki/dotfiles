@@ -14,6 +14,3 @@ curl -L git.io/nodebrew | perl - setup
 
 # neobundle install
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-
-# percol
-sudo pip install percol
