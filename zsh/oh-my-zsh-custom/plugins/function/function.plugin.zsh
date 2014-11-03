@@ -2,7 +2,7 @@
 # Functions
 # ====================================
 
-# [Description] ^ を押して cd .. する
+# [Description] ^を押してcd..する
 # [Reference] http://qiita.com/items/b01536fa63d9f8fadf4f
 function cdup() {
     if [ -z "$BUFFER" ]; then
@@ -31,15 +31,21 @@ function git() {
 
 # [Description] ^G^S = git status --short --branch
 # [Reference] http://qiita.com/yuku_t/items/e58cbecf13407446bd50
-function _git_status() {
+function git_status() {
     if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
         echo git status --short --branch # git statusを実行したっぽくみせかける
         git status --short --branch
     fi
     zle reset-prompt
 }
-zle -N git_status _git_status  # _git_status関数をgit_status widgetとして登録
+zle -N git_status git_status  # git_status関数をgit_status widgetとして登録
 bindkey '^G^S' git_status
+
+function copyline() {
+    print -rn $BUFFER | pbcopy; zle -M "Copied: ${BUFFER}"
+}
+zle -N copyline
+bindkey '@@' copyline
 
 # ---------------------------------------------------
 # peco
