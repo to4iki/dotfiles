@@ -42,6 +42,7 @@ install ghq || true
 install rbenv || true
 install ruby-build || true
 install go || true
+install nodebrew || true
 
 ## Heroku
 install heroku-toolbelt || true
