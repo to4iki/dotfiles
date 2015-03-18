@@ -39,6 +39,11 @@ export PATH=$PATH:$JAVA_HOME/bin
 export GOPATH=$HOME
 
 # ------------------------------------
+# Haskell
+# ------------------------------------
+export PATH=$HOME/.cabal/bin:$PATH
+
+# ------------------------------------
 # Postgres
 # ------------------------------------
 export PGDATA=/usr/local/var/postgres
