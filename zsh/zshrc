@@ -16,6 +16,7 @@ alias
 function
 git
 npm
+peco
 )
 
 source $ZSH/oh-my-zsh.sh
