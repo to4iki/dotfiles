@@ -43,6 +43,7 @@ install rbenv || true
 install ruby-build || true
 install go || true
 install nodebrew || true
+install carthage || true
 
 ## Heroku
 install heroku-toolbelt || true
@@ -51,6 +52,7 @@ install heroku-toolbelt || true
 install brew-cask
 cask install alfred || true
 cask install appcleaner || true
+case install atom || true
 cask install bettertouchtool || true
 cask install caffeine || true
 cask install clipmenu || true
