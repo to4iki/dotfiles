@@ -2,8 +2,8 @@
 # Functions
 # ====================================
 
-# [Description] ^を押してcd..する
-# [Reference] http://qiita.com/items/b01536fa63d9f8fadf4f
+# ^を押してcd..する
+# http://qiita.com/items/b01536fa63d9f8fadf4f
 function cdup() {
     if [ -z "$BUFFER" ]; then
         echo
@@ -23,14 +23,14 @@ function cdup() {
 zle -N cdup
 bindkey '\^' cdup
 
-# [Description] hub = git
-# [Reference] http://blog.toshimaru.net/github-and-hub
+# hub = git
+# http://blog.toshimaru.net/github-and-hub
 function git() {
     hub "$@"
 }
 
-# [Description] ^G^S = git status --short --branch
-# [Reference] http://qiita.com/yuku_t/items/e58cbecf13407446bd50
+# ^G^S = git status --short --branch
+# http://qiita.com/yuku_t/items/e58cbecf13407446bd50
 function git_status() {
     if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
         echo git status --short --branch # git statusを実行したっぽくみせかける

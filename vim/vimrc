@@ -11,11 +11,9 @@ endif
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
-NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'rking/ag.vim'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'vim-jp/vimdoc-ja'
+NeoBundle 'scrooloose/nerdtree'
 
 filetype on
 filetype indent on
@@ -39,18 +37,15 @@ set showmatch " 波括弧入力時の対応する括弧を表示
 set list listchars=trail:_ " 行の後ろの空白文字を表示
 set showmatch " 閉じ括弧が入力されたとき、対応する括弧を表示する
 
-
 " Tab
 set ts=2 sw=2 sts=0 " タブは半角2文字
 set expandtab " タブの代わりに空白文字表示
 set autoindent " オートインデント
 set showtabline=4 " タブを常に表示
 
-
 " Completion
 set wildmenu " コマンド補完を有効
 set omnifunc=syntaxcomplete#Complete " オムニ補完あり
-
 
 " Search
 set hlsearch " 検索にヒットした文字列をハイライト
@@ -58,13 +53,11 @@ set ignorecase " 検索時に大文字小文字を無視
 set smartcase " 大文字で検索された場合は大文字だけヒット
 set incsearch " インクリメンタルサーチを有効
 
-
 " Option
 set autoread " vimの外でのファイル変更を自動的に反映させる
 set noswapfile " バッファのスワップファイルを作成しない
 set nobackup " バックアップファイルを作成しない
 set visualbell t_vb= " ビープ音をオフ
-
 
 " Line
 set modeline " モードラインを有効にする
@@ -72,9 +65,8 @@ set modelines=3 " 3行目までをモードラインとして検索する
 set laststatus=2 "ステータスラインを常に表示
 set showcmd "入力中のコマンドをステータスに表示
 
-" ステータスライン
+" Status Line
 set statusline=%f%m%=%y[%{&fileencoding}][%{&fileformat}]
-
 
 " Moving
 noremap H b
@@ -85,26 +77,18 @@ noremap L w
 nnoremap ( %
 nnoremap ) %
 
-
 " .vimrcを再読み込み
 nnoremap <Leader>r :source ~/.vimrc<CR>
 
-
 " Color
 syntax on
-colorscheme hybrid
 
-
-" Markdown
-let g:quickrun_config = {}
-let g:quickrun_config.markdown = {
-    \ 'outputter' : 'null',
-    \ 'command'   : 'open',
-    \ 'cmdopt'    : '-a',
-    \ 'args'      : 'Marked',
-    \ 'exec'      : '%c %o %a %s',
-    \ }
-
+" autocmd vimenter * NERDTree
+nmap <silent> <C-e>  :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:NERDTreeDirArrows=0
+"let g:NERDTreeMouseMode=0
+let g:NERDTreeWinPos = "right"
 
 " Ag(The Silver Searcher)
 let g:unite_enable_start_insert = 1 " insert modeで開始
@@ -120,6 +104,9 @@ if executable('ag')
   let g:unite_source_grep_recursive_opt = ''
 endif
 
+" Indent
+autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " ----------------------------------------
 " INSERT MODE
