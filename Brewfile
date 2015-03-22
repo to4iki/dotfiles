@@ -34,7 +34,6 @@ install ag || true
 install reattach-to-user-namespace || true
 install readline || true
 install tmux || true
-install wget || true
 install peco || true
 install ghq || true
 
@@ -50,25 +49,18 @@ install heroku-toolbelt || true
 
 ## Casks
 install brew-cask
-cask install alfred || true
 cask install appcleaner || true
 case install atom || true
 cask install bettertouchtool || true
-cask install caffeine || true
 cask install clipmenu || true
 cask install dropbox || true
-cask install dash || true
-cask install google-chrome-canary || true
 cask install iterm2 || true
-cask install keyremap4macbook || true
-cask install kobito || true
+cask install Karabiner || true
 cask install pckeyboardhack || true
 cask install spark || true
 cask install sourcetree || true
 cask install virtualbox || true
 cask install vagrant || true
-
-cask alfred link
 
 # Remove outdated versions
 cleanup
