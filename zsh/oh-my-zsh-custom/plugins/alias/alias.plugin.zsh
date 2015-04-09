@@ -17,6 +17,7 @@ alias pl='peco-git-log'
 alias pco='peco-git-checkout'
 
 # Vim
+alias v ='vim'
 alias vi='vim'
 
 # Ag (The Silver Search)
@@ -24,8 +25,6 @@ alias ags='ag -S --stats'
 alias agh='ag --hidden'
 
 # Ruby
-alias rs='rspec'
-alias ra='rake'
 alias be='bundle exec'
 alias bp='bundle package'
 alias bi='bundle install --path vendor/bundle'

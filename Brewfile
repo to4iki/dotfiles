@@ -1,16 +1,12 @@
+## ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+## export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+## brew bundle
+
 # Make sure using latest Homebrew
 update || true
 
 # Update already-installed formula
 upgrade || true
-
-# Add Repository
-tap homebrew/versions || true
-tap phinze/homebrew-cask || true
-tap homebrew/binary || true
-tap thoughtbot/formulae || true
-tap peco/peco || true
-tap motemen/ghq || true
 
 # Packages
 
@@ -48,9 +44,12 @@ install carthage || true
 install heroku-toolbelt || true
 
 ## Casks
-install brew-cask
+install caskroom/cask/brew-cask || true
+
 cask install appcleaner || true
-case install atom || true
+cask install bartender || true
+cask install atom || true
+cask install bartender || true
 cask install bettertouchtool || true
 cask install clipmenu || true
 cask install dropbox || true
