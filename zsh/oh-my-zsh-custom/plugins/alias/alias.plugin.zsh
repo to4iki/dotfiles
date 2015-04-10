@@ -1,20 +1,16 @@
-# ------------------------------------
+# ====================================
 # Aliases
-# ------------------------------------
+# ====================================
 
 # General
 alias history='fc -l'
 alias grep='grep --color=auto'
-alias pps='peco-ps'
-alias pssh='peco-ssh'
 
 # Git
 alias g='git'
 alias gs='git s'
 alias t='tig'
 alias ta='tig --all'
-alias pl='peco-git-log'
-alias pco='peco-git-checkout'
 
 # Vim
 alias v ='vim'

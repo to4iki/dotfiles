@@ -51,6 +51,7 @@ cask install bartender || true
 cask install atom || true
 cask install bartender || true
 cask install bettertouchtool || true
+cask install google-chrome || true
 cask install clipmenu || true
 cask install dropbox || true
 cask install iterm2 || true

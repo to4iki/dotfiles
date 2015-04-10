@@ -1,5 +1,5 @@
 # ====================================
-# PATH
+# zshenv
 # ====================================
 
 # general
@@ -26,8 +26,8 @@ export PATH=$HOME/.cabal/bin:$PATH
 # Postgres
 export PGDATA=/usr/local/var/postgres
 
-# direnv
-eval "$(direnv hook zsh)"
-
 # homebrew-cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+
+# direnv
+eval "$(direnv hook zsh)"

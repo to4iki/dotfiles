@@ -1,10 +1,9 @@
 # ====================================
-# ENVIRON
+# Global 
 # ====================================
 
 # LANGUAGE
 export LANG=ja_JP.UTF-8
-
 # EDITOR
 export EDITOR=vim
 
@@ -28,12 +27,6 @@ source /usr/local/etc/profile.d/z.sh
 precmd() {
     _z --add "$(pwd -P)"
 }
-
-# growl
-# http://mba-hack.blogspot.jp/2013/10/zshgrowl.html
-if [ -f ~/dotfiles/.lib/growl.zsh ]; then
-    source ~/dotfiles/.lib/growl.zsh
-fi
 
 # bd
 if [ -f ~/dotfiles/.lib/bd.zsh ]; then

@@ -6,7 +6,6 @@ mkdir -p ~/.vim/bundle
 
 # init ~/dotfiles/.lib/
 cd ~/dotfiles/.lib
-curl -O https://gist.github.com/syui/7112389/raw/growl.zsh
 curl -O https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh
 
 # neobundle install
