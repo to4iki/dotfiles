@@ -1,30 +1,30 @@
 dotfiles
 ========
 
-This is my dotfiles.
+~/.
 
 ## Usage
 
-### Before
+before.
 
 [Homebrew — The missing package manager for OS X](http://brew.sh/)
 
-### Init
+### bootstrap
 
-#### package & application install.
+```
+$ git clone https://github.com/to4iki/dotfiles ~/.dotfiles
+$ cd ~/.dotfiles
+$ ./bootstrap.sh
+```
+
+### package & application install
 
 ```
 $ brew bundle
 ```
 
-#### setup
-
-```
-$ sh initialize.sh
-```
-
-### Install
+### setup
 Just type `rake` or `rake all`.
 
-### Uninstall
+### clean
 Just type `rake clean`.

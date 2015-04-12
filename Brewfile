@@ -32,6 +32,7 @@ install readline || true
 install tmux || true
 install peco || true
 install ghq || true
+install heroku-toolbelt || true
 
 ## Languages
 install rbenv || true
@@ -39,9 +40,6 @@ install ruby-build || true
 install go || true
 install nodebrew || true
 install carthage || true
-
-## Heroku
-install heroku-toolbelt || true
 
 ## Casks
 install caskroom/cask/brew-cask || true

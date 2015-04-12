@@ -1,9 +1,3 @@
-# ====================================
-# peco
-# ====================================
-
-setopt hist_ignore_all_dups
-
 # select command history
 function peco_select_history () {
     local tac
@@ -42,10 +36,3 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
-
-# file name search
-function peco-filename-search() {
-    $(find . -name "*${1}*" | grep -v "/\." | peco)
-}
-zle -N peco-filename-search
-bindkey '^f' peco-filename-search

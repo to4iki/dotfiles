@@ -1,30 +1,28 @@
-# ====================================
-# Aliases
-# ====================================
-
-# General
+# Unix commands
 alias history='fc -l'
 alias grep='grep --color=auto'
 
+# Editor
+alias vi ="$EDITOR"
+alias v='vi'
+alias vimrc="$EDITOR ~/.vimrc"
+alias zshrc="$EDITOR ~/.zshrc"
+
 # Git
 alias g='git'
-alias gs='git s'
+alias s='git s'
+alias m='git checkout master'
+alias d='git d'
 alias t='tig'
 alias ta='tig --all'
 
-# Vim
-alias v ='vim'
-alias vi='vim'
-
-# Ag (The Silver Search)
+# Ag(The Silver Search)
 alias ags='ag -S --stats'
 alias agh='ag --hidden'
 
 # Ruby
+alias b='bundle'
 alias be='bundle exec'
-alias bp='bundle package'
-alias bi='bundle install --path vendor/bundle'
-alias bin='bundle install --path vendor/bundle --binstubs .bundle/bin'
 alias irb='pry'
 
 # Vagrant

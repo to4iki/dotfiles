@@ -1,12 +1,8 @@
-# ----------------------------------------
 # Visual
-# ----------------------------------------
 # display the commit id in the main view
 set show-id = yes
 
-# ----------------------------------------
 # KeyBindings
-# ----------------------------------------
 bind diff ; view-next
 bind diff l scroll-right
 bind diff h scroll-left

@@ -1,9 +1,8 @@
-# ====================================
-# zshenv
-# ====================================
-
 # general
+export PATH=/opt/local/bin:$PATH
+export PATH=/opt/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/bin:$PATH
 
 # node.js
@@ -14,8 +13,8 @@ export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 # Java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
-export PATH=$PATH:$JAVA_HOME/bin
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
+# export PATH=$PATH:$JAVA_HOME/bin
 
 # Go
 export GOPATH=$HOME
@@ -23,11 +22,5 @@ export GOPATH=$HOME
 # Haskell
 export PATH=$HOME/.cabal/bin:$PATH
 
-# Postgres
-export PGDATA=/usr/local/var/postgres
-
 # homebrew-cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
-
-# direnv
-eval "$(direnv hook zsh)"
