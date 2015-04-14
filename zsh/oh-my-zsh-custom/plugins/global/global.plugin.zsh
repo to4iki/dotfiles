@@ -24,11 +24,6 @@ precmd() {
     _z --add "$(pwd -P)"
 }
 
-# bd
-if [ -f ~/dotfiles/.lib/bd.zsh ]; then
-    source ~/dotfiles/.lib/bd.zsh
-fi
-
 # Completion
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit && compinit -u
