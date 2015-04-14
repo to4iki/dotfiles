@@ -1,6 +1,7 @@
 cd ~/
 
 # init dir
+mkdir ~/.config
 mkdir -p ~/.vim/bundle
 
 # neobundle install

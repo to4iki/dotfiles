@@ -19,8 +19,11 @@ $ ./bootstrap.sh
 
 ### package & application install
 
+[Homebrew/homebrew-brewdler](https://github.com/Homebrew/homebrew-brewdler)
+
 ```
-$ brew bundle
+$ brew tap Homebrew/brewdler
+$ brew brewdle
 ```
 
 ### setup
