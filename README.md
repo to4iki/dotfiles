@@ -11,7 +11,7 @@ before.
 
 ### bootstrap
 
-```
+```bash
 $ git clone https://github.com/to4iki/dotfiles ~/.dotfiles
 $ cd ~/.dotfiles
 $ ./bootstrap.sh
@@ -19,12 +19,7 @@ $ ./bootstrap.sh
 
 ### package & application install
 
-[Homebrew/homebrew-brewdler](https://github.com/Homebrew/homebrew-brewdler)
-
-```
-$ brew tap Homebrew/brewdler
-$ brew brewdle
-```
+[to4iki/brew_bundle](https://github.com/to4iki/brew_bundle)
 
 ### setup
 Just type `rake` or `rake all`.
