@@ -2,18 +2,18 @@
 require 'rake/clean'
 
 HOME = ENV["HOME"]
-CONFIG = HOME + "/.config"
-OS = `uname`
+CONFIG = "#{HOME}/.config"
+VIM = "#{HOME}/.vim"
 
-ETC_ROOT  =  File.join(File.dirname(__FILE__), "etc")
-GIT_ROOT  =  File.join(File.dirname(__FILE__), "git")
-PECO_ROOT =  File.join(File.dirname(__FILE__), "peco")
-TMUX_ROOT =  File.join(File.dirname(__FILE__), "tmux")
-VIM_ROOT  =  File.join(File.dirname(__FILE__), "vim")
-ZSH_ROOT  =  File.join(File.dirname(__FILE__), "zsh")
+ETC_ROOT  = File.join(File.dirname(__FILE__), "etc")
+GIT_ROOT  = File.join(File.dirname(__FILE__), "git")
+PECO_ROOT = File.join(File.dirname(__FILE__), "peco")
+TMUX_ROOT = File.join(File.dirname(__FILE__), "tmux")
+VIM_ROOT  = File.join(File.dirname(__FILE__), "vim")
+ZSH_ROOT  = File.join(File.dirname(__FILE__), "zsh")
 
-ZSH_DOT_FILES  =  %w{ zshrc zshenv }
-ETC_DOT_FILES  =  Dir.glob("etc" +  "/*").map{|path| File.basename(path)}
+ZSH_DOT_FILES = %w{ zshrc zshenv }
+ETC_DOT_FILES = Dir.glob("etc" +  "/*").map{|path| File.basename(path)}
 
 cleans = [
           ".agignore",
@@ -66,6 +66,7 @@ namespace :vim do
   desc "Create symbolic link to HOME"
   task :link do
     same_name_symlinks VIM_ROOT, ["vimrc"]
+    symlink_ File.join(VIM_ROOT, "vimrcs"), File.join(VIM, "vimrcs")
   end
 end
 

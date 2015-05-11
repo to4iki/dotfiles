@@ -5,8 +5,6 @@ alias grep='grep --color=auto'
 # Editor
 alias vi ="$EDITOR"
 alias v='vi'
-alias vimrc="$EDITOR ~/.vimrc"
-alias zshrc="$EDITOR ~/.zshrc"
 
 # Git
 alias g='git'
