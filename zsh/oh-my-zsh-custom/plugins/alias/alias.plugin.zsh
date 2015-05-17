@@ -3,8 +3,8 @@ alias history='fc -l'
 alias grep='grep --color=auto'
 
 # Editor
-alias vi ="$EDITOR"
-alias v='vi'
+alias vi ="vim"
+alias v='vim'
 
 # Git
 alias g='git'
