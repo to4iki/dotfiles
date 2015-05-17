@@ -92,6 +92,12 @@ nnoremap sh <C-w>h
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
+
+" Resize
+nnoremap <C-E><C-k> :resize -3<CR>
+nnoremap <C-E><C-j> :resize +3<CR>
+nnoremap <C-E><C-h> :vertical resize +10<CR>
+nnoremap <C-E><C-l> :vertical resize -10<CR>
 " }}}
 
 " Language {{{
@@ -101,8 +107,13 @@ autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " INSERT_MODE {{{
 inoremap <silent> jj <ESC>
-inoremap <C-e> <END>
-inoremap <C-a> <HOME>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-n> <Down>
+inoremap <C-p> <UP>
+inoremap <C-d> <Delete>
 " }}}
 
 " NERDTree {{{
@@ -112,9 +123,7 @@ let g:NERDTreeWinPos = "right"
 " }}}
 
 " neocomplete {{{
-if filereadable(expand('$HOME/.vim/vimrcs/neocomplete.vimrc'))
-  source $HOME/.vim/vimrcs/neocomplete.vimrc
-endif
+source $HOME/.vim/vimrcs/neocomplete.vimrc
 " }}}
 
 " neosnippet {{{
