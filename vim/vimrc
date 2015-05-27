@@ -14,6 +14,7 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'tomasr/molokai'
 
@@ -113,11 +114,6 @@ autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 inoremap <silent> jj <ESC>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
-inoremap <C-b> <Left>
-inoremap <C-f> <Right>
-inoremap <C-n> <Down>
-inoremap <C-p> <UP>
-inoremap <C-d> <Delete>
 " }}}
 
 " NERDTree {{{
@@ -125,6 +121,12 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrows=0
 let g:NERDTreeWinPos = "right"
 " }}}
+
+" NERDCommenter {{{
+let NERDSpaceDelims = 1
+nmap ,, <Plug>NERDCommenterToggle
+vmap ,, <Plug>NERDCommenterToggle
+" }}
 
 " neocomplete {{{
 source $HOME/.vim/vimrcs/neocomplete.vimrc

@@ -1,19 +1,18 @@
-# Visual
-# display the commit id in the main view
-set show-id = yes
-
-# KeyBindings
-bind diff ; view-next
-bind diff l scroll-right
-bind diff h scroll-left
-# disable the bind generic G !git gc
+## General
 bind generic G none
 bind generic g move-first-line
 bind generic G move-last-line
-# Rで選択した行よりも上を全部 rebase -i
+bind generic <Ctrl-f> scroll-page-down
+bind generic <Ctrl-b> scroll-page-up
+# branch
+bind branch n !git checkout -b %(prompt) %(branch)
+bind branch D !?git branch -D %(branch)
+bind branch d !?git branch -d %(branch)
+# rebase
 bind main R !git rebase -i %(commit)
 bind diff R !git rebase -i %(commit)
 
+## Github
 # open repository at github
 bind generic ^ !@hub browse
 # open issues at github
