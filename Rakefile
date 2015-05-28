@@ -24,6 +24,7 @@ cleans = [
           ".config/peco",
           ".tmux.conf",
           ".vimrc",
+          ".xvimrc",
           ".zshrc",
           ".zshenv",
           ".oh-my-zsh",
@@ -65,7 +66,7 @@ end
 namespace :vim do
   desc "Create symbolic link to HOME"
   task :link do
-    same_name_symlinks VIM_ROOT, ["vimrc"]
+    same_name_symlinks VIM_ROOT, ["vimrc", "xvimrc"]
     symlink_ File.join(VIM_ROOT, "vimrcs"), File.join(VIM, "vimrcs")
   end
 end
