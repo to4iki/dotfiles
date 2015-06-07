@@ -84,6 +84,9 @@ set updatetime=100
 nnoremap ; :
 nnoremap : ;
 
+nnoremap x "_x
+vnoremap x "_x
+
 nnoremap <C-t> :<C-u>tabnew<CR>
 nnoremap <C-l> gt
 nnoremap <C-h> gT
@@ -103,17 +106,25 @@ nnoremap <C-E><C-k> :resize -3<CR>
 nnoremap <C-E><C-j> :resize +3<CR>
 nnoremap <C-E><C-h> :vertical resize +10<CR>
 nnoremap <C-E><C-l> :vertical resize -10<CR>
+
+" Move to shift lot
+nnoremap J 20j
+nnoremap K 20k
+nnoremap L 10l
+nnoremap H 10h
+
+" InsertMode
+inoremap <silent> jj <ESC>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+
+" VisualMode
+vnoremap v ^$h
 " }}}
 
 " Language {{{
 autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-" }}}
-
-" INSERT_MODE {{{
-inoremap <silent> jj <ESC>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
 " }}}
 
 " NERDTree {{{

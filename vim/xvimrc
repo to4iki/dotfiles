@@ -8,6 +8,10 @@ set clipboard=unnamed
 noremap ; :
 noremap : ;
 
+" NormalMode
+nnoremap x "_x
+vnoremap x "_x
+
 nnoremap <C-t> :<C-u>tabnew<CR>
 nnoremap <C-l> gt
 nnoremap <C-h> gT
@@ -21,4 +25,11 @@ nnoremap sh <C-w>h
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
+
+" InsertMode
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$<Right>
+
+" VisualMode
+vnoremap v ^$h
 " }}}
