@@ -15,6 +15,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'tomasr/molokai'
 
@@ -112,6 +113,10 @@ nnoremap J 20j
 nnoremap K 20k
 nnoremap L 10l
 nnoremap H 10h
+
+" QuickRun
+nnoremap <C-r> :QuickRun<CR>
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 
 " InsertMode
 inoremap <silent> jj <ESC>
