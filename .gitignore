@@ -7,6 +7,3 @@ target/
 # OSX
 .DS_Store
 Icon?
-
-# Original
-.lib/
