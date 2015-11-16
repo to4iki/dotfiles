@@ -28,3 +28,7 @@
   generic = G move-last-line
 [ghq]
   root = ~/src
+[pull]
+  rebase = true
+[rebase]
+  autoStash = true
