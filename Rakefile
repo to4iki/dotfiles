@@ -18,7 +18,6 @@ ETC_DOT_FILES = Dir.glob("etc" +  "/*").map{|path| File.basename(path)}
 cleans = [
           ".agignore",
           ".gemrc",
-          ".pryrc",
           ".tigrc",
           ".gitconfig",
           ".config/peco",
