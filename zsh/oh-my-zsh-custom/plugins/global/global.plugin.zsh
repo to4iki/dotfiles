@@ -20,8 +20,13 @@ unsetopt share_history
 # z
 _Z_CMD=j
 source /usr/local/etc/profile.d/z.sh
-precmd() {
+function precmd() {
     _z --add "$(pwd -P)"
+}
+
+# hub = git
+function git() {
+    hub "$@"
 }
 
 # Completion

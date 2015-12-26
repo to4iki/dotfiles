@@ -7,7 +7,6 @@ ZSH_THEME="t4"
 plugins=(
 global
 alias
-function
 git
 npm
 peco

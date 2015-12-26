@@ -22,6 +22,3 @@ alias agh='ag --hidden'
 alias b='bundle'
 alias be='bundle exec'
 alias irb='pry'
-
-# Vagrant
-alias vs='vagrant global-status'
