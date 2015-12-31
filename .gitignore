@@ -7,3 +7,6 @@ target/
 # OSX
 .DS_Store
 Icon?
+
+# fish
+fish/fish*

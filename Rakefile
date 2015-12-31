@@ -10,10 +10,9 @@ GIT_ROOT  = File.join(File.dirname(__FILE__), "git")
 PECO_ROOT = File.join(File.dirname(__FILE__), "peco")
 TMUX_ROOT = File.join(File.dirname(__FILE__), "tmux")
 VIM_ROOT  = File.join(File.dirname(__FILE__), "vim")
-ZSH_ROOT  = File.join(File.dirname(__FILE__), "zsh")
+FISH_ROOT = File.join(File.dirname(__FILE__), "fish")
 
-ZSH_DOT_FILES = %w{ zshrc zshenv }
-ETC_DOT_FILES = Dir.glob("etc" +  "/*").map{|path| File.basename(path)}
+ETC_DOT_FILES = Dir.glob("etc" +  "/*").map{ |path| File.basename(path) }
 
 cleans = [
           ".agignore",
@@ -25,16 +24,13 @@ cleans = [
           ".vimrc",
           ".ideavimrc",
           ".xvimrc",
-          ".zshrc",
-          ".zshenv",
-          ".oh-my-zsh",
-          ".oh-my-zsh-custom"
+          ".config/fish"
          ]
 
-CLEAN.concat(cleans.map{|c| File.join(HOME,c)})
+CLEAN.concat(cleans.map { |c| File.join(HOME, c) })
 
 task :default => :all
-task :all => ["etc:link", "peco:link", "git:link", "tmux:link", "vim:link", "zsh:link"]
+task :all => ["etc:link", "peco:link", "git:link", "tmux:link", "vim:link", "fish:link"]
 
 namespace :etc do
   task :link do
@@ -50,7 +46,7 @@ namespace :git do
 end
 
 namespace :peco do
-  desc "Create symbolic link to HOME"
+  desc "Create symbolic link to CONFIG"
   task :link do
     symlink_ PECO_ROOT, File.join(CONFIG, "peco")
   end
@@ -71,17 +67,10 @@ namespace :vim do
   end
 end
 
-namespace :zsh do
-  desc "Create symbolic link to HOME"
-  task :link => [File.join(HOME,".oh-my-zsh")] do
-    symlink_ File.join(ZSH_ROOT, "zshrc"), File.join(HOME, ".zshrc")
-    symlink_ File.join(ZSH_ROOT, "zshenv"), File.join(HOME, ".zshenv")
-    symlink_ File.join(ZSH_ROOT, "oh-my-zsh-custom"), File.join(HOME, ".oh-my-zsh-custom")
-  end
-
-  desc "Download oh-my-zsh"
-  file File.join(HOME,".oh-my-zsh") do |f|
-    sh "git clone https://github.com/robbyrussell/oh-my-zsh.git #{f.name}"
+namespace :fish do
+  desc "Create symbolic link to CONFIG"
+  task :link do
+    symlink_ FISH_ROOT, File.join(CONFIG, "fish")
   end
 end
 

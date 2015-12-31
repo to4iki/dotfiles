@@ -24,5 +24,7 @@ $ ./bootstrap.sh
 ### setup
 Just type `rake` or `rake all`.
 
+After install. [oh-my-fish/oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
+
 ### clean
 Just type `rake clean`.
