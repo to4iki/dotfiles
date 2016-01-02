@@ -11,6 +11,7 @@ PECO_ROOT = File.join(File.dirname(__FILE__), "peco")
 TMUX_ROOT = File.join(File.dirname(__FILE__), "tmux")
 VIM_ROOT  = File.join(File.dirname(__FILE__), "vim")
 FISH_ROOT = File.join(File.dirname(__FILE__), "fish")
+OMF_ROOT = File.join(File.dirname(__FILE__), "omf")
 
 ETC_DOT_FILES = Dir.glob("etc" +  "/*").map{ |path| File.basename(path) }
 
@@ -24,13 +25,15 @@ cleans = [
           ".vimrc",
           ".ideavimrc",
           ".xvimrc",
-          ".config/fish"
+          ".config/fish/config.fish",
+          ".config/fish/functions",
+          ".config/omf"
          ]
 
 CLEAN.concat(cleans.map { |c| File.join(HOME, c) })
 
 task :default => :all
-task :all => ["etc:link", "peco:link", "git:link", "tmux:link", "vim:link", "fish:link"]
+task :all => ["etc:link", "peco:link", "git:link", "tmux:link", "vim:link", "fish:link", "omf:link"]
 
 namespace :etc do
   task :link do
@@ -70,7 +73,15 @@ end
 namespace :fish do
   desc "Create symbolic link to CONFIG"
   task :link do
-    symlink_ FISH_ROOT, File.join(CONFIG, "fish")
+    symlink_ File.join(FISH_ROOT, "config.fish"), File.join("#{CONFIG}/fish", "config.fish")
+    symlink_ File.join(FISH_ROOT, "functions"), File.join("#{CONFIG}/fish", "functions")
+  end
+end
+
+namespace :omf do
+  desc "Create symbolic link to CONFIG"
+  task :link do
+    symlink_ OMF_ROOT, File.join(CONFIG, "omf")
   end
 end
 
