@@ -22,6 +22,7 @@
   lp = log --decorate --stat --patch
   n = now --all --stat
   s = status -sb
+  undo = reset --soft HEAD~
   see = browse
 [tig "bind"]
   generic = g move-first-line
