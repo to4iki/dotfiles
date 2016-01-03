@@ -26,21 +26,24 @@ set -x LANG ja_JP.UTF-8
 alias l 'ls -la'
 alias vi 'vim'
 alias v 'vim'
-# Git
 alias git 'hub'
 alias g 'git'
-alias s 'git status'
+alias s 'git s'
 alias m 'git checkout master'
-alias d 'git diff'
+alias d 'git d'
 alias t 'tig'
-# Ruby
 alias be 'bundle exec'
 
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
 
-## Key_binding
+## KEY_BINDINGS
 function fish_user_key_bindings
     bind \cr peco_select_history
     bind \c] peco_select_ghq_repository
+end
+
+## OPTIONS
+function peco
+    command peco --layout=bottom-up $argv
 end
