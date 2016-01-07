@@ -13,7 +13,8 @@
   ad = add
   br = branch --verbose --verbose --color
   co = checkout
-  ci = commit -v
+  cv = commit -v
+  cav = commit -av
   cm = commit -m
   d = diff --histogram
   fixup = commit --amend -C HEAD
@@ -34,3 +35,5 @@
   rebase = true
 [rebase]
   autoStash = true
+[stash]
+  showPatch = true
