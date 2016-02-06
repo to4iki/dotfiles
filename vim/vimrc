@@ -87,15 +87,15 @@ nnoremap : ;
 nnoremap x "_x
 vnoremap x "_x
 
-nnoremap <C-t> :<C-u>tabnew<CR>
-nnoremap <C-l> gt
-nnoremap <C-h> gT
-
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
+
+nnoremap st :<C-u>tabnew<CR>
+nnoremap sn gt
+nnoremap sp gT
 
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>

@@ -12,10 +12,6 @@ noremap : ;
 nnoremap x "_x
 vnoremap x "_x
 
-nnoremap <C-t> :<C-u>tabnew<CR>
-nnoremap <C-l> gt
-nnoremap <C-h> gT
-
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
