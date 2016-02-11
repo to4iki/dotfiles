@@ -13,28 +13,28 @@ VIM_ROOT  = File.join(File.dirname(__FILE__), 'vim')
 FISH_ROOT = File.join(File.dirname(__FILE__), 'fish')
 OMF_ROOT = File.join(File.dirname(__FILE__), 'omf')
 
-ETC_DOT_FILES = Dir.glob('etc' +  '/*').map{ |path| File.basename(path) }
+ETC_DOT_FILES = Dir.glob('etc' +  '/*').map { |path| File.basename(path) }
 
-cleans = [
-          '.agignore',
-          '.gemrc',
-          '.tigrc',
-          '.gitconfig',
-          '.config/peco',
-          '.tmux.conf',
-          '.vimrc',
-          '.ideavimrc',
-          '.xvimrc',
-          '.vim/vimrcs',
-          '.config/fish/config.fish',
-          '.config/fish/functions',
-          '.config/omf'
-         ]
+cleans = %w(
+    .agignore
+    .gemrc
+    .tigrc
+    .gitconfig
+    .config/peco
+    .tmux.conf
+    .vimrc
+    .ideavimrc
+    .xvimrc
+    .vim/vimrcs
+    .config/fish/config.fish
+    .config/fish/functions
+    .config/omf
+)
 
 CLEAN.concat(cleans.map { |c| File.join(HOME, c) })
 
 task :default => :all
-task :all => ['etc:link', 'peco:link', 'git:link', 'tmux:link', 'vim:link', 'fish:link', 'omf:link']
+task :all => %w(etc:link peco:link git:link tmux:link vim:link fish:link omf:link)
 
 namespace :etc do
   task :link do
