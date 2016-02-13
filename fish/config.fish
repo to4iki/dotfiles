@@ -32,6 +32,7 @@ alias s 'git s'
 alias m 'git checkout master'
 alias d 'git d'
 alias t 'tig'
+alias ta 'tig --all'
 alias be 'bundle exec'
 
 # Load oh-my-fish configuration.

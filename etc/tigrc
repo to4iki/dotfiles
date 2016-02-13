@@ -1,21 +1,26 @@
-## General
+# Visual
+set split-view-height = 77%
+set split-view-width = 77%
+set ignore-space = all
+
+# Generic
 bind generic G none
 bind generic g move-first-line
 bind generic G move-last-line
 bind generic <Ctrl-f> scroll-page-down
 bind generic <Ctrl-b> scroll-page-up
-# branch
+## Github
+bind generic ^ !@hub browse
+bind generic - !@hub browse -- issues
+bind generic o !@hub browse -- commit/%(commit)
+
+# Main
+bind main R !git rebase -i %(commit)
+
+# Branch
 bind branch n !git checkout -b %(prompt) %(branch)
 bind branch D !?git branch -D %(branch)
 bind branch d !?git branch -d %(branch)
-# rebase
-bind main R !git rebase -i %(commit)
-bind diff R !git rebase -i %(commit)
 
-## Github
-# open repository at github
-bind generic ^ !@hub browse
-# open issues at github
-bind generic - !@hub browse -- issues
-# open commit at github
-bind generic o !@hub browse -- commit/%(commit)
+# Diff
+bind diff R !git rebase -i %(commit)
