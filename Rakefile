@@ -27,7 +27,7 @@ cleans = %w(
     .xvimrc
     .vim/vimrcs
     .config/fish/config.fish
-    .config/fish/functions
+    .config/fish/completions
     .config/omf
 )
 
@@ -75,7 +75,7 @@ namespace :fish do
   desc 'Create symbolic link to CONFIG'
   task :link do
     symlink_ File.join(FISH_ROOT, 'config.fish'), File.join("#{CONFIG}/fish", 'config.fish')
-    symlink_ File.join(FISH_ROOT, 'functions'), File.join("#{CONFIG}/fish", 'functions')
+    symlink_ File.join(FISH_ROOT, 'completions'), File.join("#{CONFIG}/fish", 'completions')
   end
 end
 

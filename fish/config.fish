@@ -34,6 +34,7 @@ alias d 'git d'
 alias t 'tig'
 alias ta 'tig --all'
 alias be 'bundle exec'
+alias r 'repo'
 
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
