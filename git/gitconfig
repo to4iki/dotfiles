@@ -15,8 +15,8 @@
     co = checkout
     commit = commit -v
     cav = commit -av
-    cm = commit -m
     d = diff --histogram
+    f = fetch
     fixup = commit --amend -C HEAD
     g = grep -n -p --color --heading --break
     info = remote show origin
