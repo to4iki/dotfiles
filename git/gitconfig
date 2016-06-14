@@ -11,7 +11,7 @@
     editor = vim
 [alias]
     ad = add
-    br = branch --verbose --verbose --color
+    br = branch --verbose --verbose --color --sort=-authordate
     co = checkout
     commit = commit -v
     cav = commit -av
