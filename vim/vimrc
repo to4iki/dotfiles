@@ -26,14 +26,12 @@ filetype plugin on
 " }}}
 
 " Common {{{
-set nocompatible " Vi互換モードをオフ
-set number "行番号表示
-set backspace=2 " backspaceで改行を削除
-set nowrap " 折り返し無効
-set smartindent " 改行時に自動的にインデントを挿入
-set clipboard+=unnamed " ヤンクしたテキストをクリップボードコピー
-
-" ファイル開いた時に、前回終了時の行で起動
+set nocompatible
+set number
+set backspace=2
+set nowrap
+set smartindent
+set clipboard+=unnamed
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
 " Color
@@ -41,37 +39,37 @@ syntax on
 colorscheme molokai
 
 " brackets
-set showmatch " 波括弧入力時の対応する括弧を表示
-set list listchars=trail:_ " 行の後ろの空白文字を表示
-set showmatch " 閉じ括弧が入力されたとき、対応する括弧を表示する
+set showmatch
+set list listchars=trail:_
+set showmatch
 
 " Tab
-set ts=2 sw=2 sts=0 " タブは半角2文字
-set expandtab " タブの代わりに空白文字表示
-set autoindent " オートインデント
-set showtabline=4 " タブを常に表示
+set ts=2 sw=2 sts=0
+set expandtab
+set autoindent
+set showtabline=4
 
 " Completion
-set wildmenu " コマンド補完を有効
-set omnifunc=syntaxcomplete#Complete " オムニ補完あり
+set wildmenu
+set omnifunc=syntaxcomplete#Complete
 
 " Search
-set hlsearch " 検索にヒットした文字列をハイライト
-set ignorecase " 検索時に大文字小文字を無視
-set smartcase " 大文字で検索された場合は大文字だけヒット
-set incsearch " インクリメンタルサーチを有効
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
 
 " Option
-set autoread " vimの外でのファイル変更を自動的に反映させる
-set noswapfile " バッファのスワップファイルを作成しない
-set nobackup " バックアップファイルを作成しない
-set visualbell t_vb= " ビープ音をオフ
+set autoread
+set noswapfile
+set nobackup
+set visualbell t_vb=
 
 " Line
-set modeline " モードラインを有効にする
-set modelines=3 " 3行目までをモードラインとして検索する
-set laststatus=2 "ステータスラインを常に表示
-set showcmd "入力中のコマンドをステータスに表示
+set modeline
+set modelines=3
+set laststatus=2
+set showcmd
 
 " Status Line
 set statusline=%f%m%=%y[%{&fileencoding}][%{&fileformat}]
@@ -112,6 +110,9 @@ nnoremap J 20j
 nnoremap K 20k
 nnoremap L 10l
 nnoremap H 10h
+
+" highlight
+nnoremap <F3> :noh<CR>
 
 " InsertMode
 inoremap <silent> jj <ESC>
