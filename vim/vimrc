@@ -15,7 +15,6 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'tomasr/molokai'
 
 call neobundle#end()
