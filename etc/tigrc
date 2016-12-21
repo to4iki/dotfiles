@@ -1,7 +1,9 @@
 # Visual
+set main-view = id date author commit-title:graph=yes,refs=yes
 set split-view-height = 77%
 set split-view-width = 77%
 set ignore-space = all
+set ignore-case = true
 
 # Generic
 bind generic G none
