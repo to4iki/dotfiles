@@ -3,7 +3,6 @@ require 'rake/clean'
 
 HOME = ENV['HOME']
 CONFIG = "#{HOME}/.config"
-VIM = "#{HOME}/.vim"
 
 ETC_ROOT  = File.join(File.dirname(__FILE__), 'etc')
 GIT_ROOT  = File.join(File.dirname(__FILE__), 'git')
@@ -25,7 +24,6 @@ cleans = %w(
     .vimrc
     .ideavimrc
     .xvimrc
-    .vim/vimrcs
     .config/fish/config.fish
     .config/fish/completions
     .config/omf
@@ -67,7 +65,6 @@ namespace :vim do
   desc 'Create symbolic link to HOME'
   task :link do
     same_name_symlinks VIM_ROOT, ['vimrc', 'ideavimrc', 'xvimrc']
-    symlink_ File.join(VIM_ROOT, 'vimrcs'), File.join(VIM, 'vimrcs')
   end
 end
 
