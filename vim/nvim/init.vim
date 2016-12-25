@@ -116,6 +116,9 @@ inoremap <C-e> <End>
 
 " VisualMode
 vnoremap v ^$h
+
+" TerminalMode
+tnoremap <silent> <ESC> <C-\><C-n>
 " }}}
 
 " Language {{{
