@@ -4,7 +4,6 @@ dotfiles
 ~/.
 
 ## Usage
-
 before.
 
 [Homebrew — The missing package manager for OS X](http://brew.sh/)
@@ -14,17 +13,18 @@ before.
 ```bash
 $ git clone https://github.com/to4iki/dotfiles ~/.dotfiles
 $ cd ~/.dotfiles
-$ ./bootstrap.sh
+$ rake boot
 ```
 
 ### package & application install
-
-[to4iki/brew_bundle](https://github.com/to4iki/brew_bundle)
+Any
 
 ### setup
-Just type `rake` or `rake all`.
+Just type `rake` or `rake link`.
 
-After install. [oh-my-fish/oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
+After dependent libraries install.
+- [oh-my-fish/oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
+- [Shougo/dein.vim](https://github.com/Shougo/dein.vim)
 
 ### clean
 Just type `rake clean`.

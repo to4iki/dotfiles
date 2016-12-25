@@ -24,10 +24,9 @@ cleans = %w(
     .gitconfig
     .config/peco
     .tmux.conf
-    .vimrc
-    .config/nvim/init.vim
     .ideavimrc
     .xvimrc
+    .config/nvim/init.vim
     .config/fish/config.fish
     .config/fish/completions
     .config/omf
@@ -35,10 +34,26 @@ cleans = %w(
 
 CLEAN.concat(cleans.map { |c| File.join(HOME, c) })
 
-task :default => :all
-task :all => %w(etc:link peco:link git:link tmux:link vim:link nvim:link fish:link omf:link)
+task :default => :link
+task :link => %w(etc:link peco:link git:link tmux:link vim:link nvim:link fish:link omf:link)
+task :boot => %w(bootstrap:mkdir bootstrap:install)
+
+namespace :bootstrap do
+  desc 'Make directory for initialization'
+  task :mkdir do
+    mkdir_if_needed(NVIM)
+    mkdir_if_needed(FISH)
+    mkdir_if_needed("#{NVIM}/dein")
+  end
+
+  desc 'Install dependent libraries'
+  task :install do
+    # TODO: impl
+  end
+end
 
 namespace :etc do
+  desc 'Create symbolic link to HOME'
   task :link do
     same_name_symlinks ETC_ROOT, ETC_DOT_FILES
   end
@@ -68,7 +83,7 @@ end
 namespace :vim do
   desc 'Create symbolic link to HOME'
   task :link do
-    same_name_symlinks VIM_ROOT, ['vimrc', 'ideavimrc', 'xvimrc']
+    same_name_symlinks VIM_ROOT, ['ideavimrc', 'xvimrc']
   end
 end
 
@@ -102,4 +117,8 @@ def same_name_symlinks root, files
   files.each do |file|
     symlink_ File.join(root, file), File.join(HOME, ".#{file}")
   end
+end
+
+def mkdir_if_needed path
+  FileUtils.mkdir_p(path) unless FileTest.exist?(path)
 end
