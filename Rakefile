@@ -28,6 +28,8 @@ cleans = %w(
     .ideavimrc
     .xvimrc
     .config/nvim/init.vim
+    .config/nvim/plugins.toml
+    .config/nvim/plugins_lazy.toml
     .config/fish/config.fish
     .config/fish/completions
     .config/omf
@@ -92,6 +94,8 @@ namespace :nvim do
   desc 'Create symbolic link to CONFIG'
   task :link do
     symlink_ File.join(NVIM_ROOT, 'init.vim'), File.join(NVIM, 'init.vim')
+    symlink_ File.join(NVIM_ROOT, 'plugins.toml'), File.join(NVIM, 'plugins.toml')
+    symlink_ File.join(NVIM_ROOT, 'plugins_lazy.toml'), File.join(NVIM, 'plugins_lazy.toml')
   end
 end
 

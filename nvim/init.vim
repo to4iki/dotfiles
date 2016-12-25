@@ -1,5 +1,6 @@
 " dein {{{
-let s:dein_dir = expand('~/.config/nvim/dein')
+let s:nvim_dir = expand('~/.config/nvim')
+let s:dein_dir = s:nvim_dir . '/dein'
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 if &compatible
@@ -8,13 +9,8 @@ endif
 execute 'set runtimepath^=' . s:dein_repo_dir
 
 call dein#begin(s:dein_dir)
-call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/neosnippet')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('scrooloose/nerdcommenter')
-call dein#add('scrooloose/nerdtree')
-call dein#add('tomasr/molokai')
+call dein#load_toml(s:nvim_dir . '/plugins.toml', {'lazy': 0})
+call dein#load_toml(s:nvim_dir . '/plugins_lazy.toml', {'lazy': 1})
 call dein#end()
 " }}}
 
