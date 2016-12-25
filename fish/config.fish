@@ -15,6 +15,8 @@ set -gx GOPATH $HOME
 set -gx RBENV_ROOT $HOME/.rbenv/
 # z
 set -gx Z_SCRIPT_PATH (brew --prefix)/etc/profile.d/z.sh
+# NeoVim
+set -gx XDG_CONFIG_HOME $HOME/.config
 
 ## EDITOR
 set -U EDITOR vim
@@ -24,6 +26,7 @@ set -x LANG ja_JP.UTF-8
 
 ## ALIAS
 alias l 'ls -la'
+alias vim 'nvim'
 alias vi 'vim'
 alias v 'vim'
 alias git 'hub'

@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 require 'rake/clean'
 
+# destination
 HOME = ENV['HOME']
 CONFIG = "#{HOME}/.config"
+NVIM = "#{CONFIG}/nvim"
+FISH = "#{CONFIG}/fish"
 
+# source
 ETC_ROOT  = File.join(File.dirname(__FILE__), 'etc')
 GIT_ROOT  = File.join(File.dirname(__FILE__), 'git')
 PECO_ROOT = File.join(File.dirname(__FILE__), 'peco')
@@ -11,7 +15,6 @@ TMUX_ROOT = File.join(File.dirname(__FILE__), 'tmux')
 VIM_ROOT  = File.join(File.dirname(__FILE__), 'vim')
 FISH_ROOT = File.join(File.dirname(__FILE__), 'fish')
 OMF_ROOT = File.join(File.dirname(__FILE__), 'omf')
-
 ETC_DOT_FILES = Dir.glob('etc' + '/*').map { |path| File.basename(path) }
 
 cleans = %w(
@@ -22,6 +25,7 @@ cleans = %w(
     .config/peco
     .tmux.conf
     .vimrc
+    .config/nvim/init.vim
     .ideavimrc
     .xvimrc
     .config/fish/config.fish
@@ -32,7 +36,7 @@ cleans = %w(
 CLEAN.concat(cleans.map { |c| File.join(HOME, c) })
 
 task :default => :all
-task :all => %w(etc:link peco:link git:link tmux:link vim:link fish:link omf:link)
+task :all => %w(etc:link peco:link git:link tmux:link vim:link nvim:link fish:link omf:link)
 
 namespace :etc do
   task :link do
@@ -68,11 +72,18 @@ namespace :vim do
   end
 end
 
+namespace :nvim do
+  desc 'Create symbolic link to CONFIG'
+  task :link do
+    symlink_ File.join(VIM_ROOT, 'nvim/init.vim'), File.join(NVIM, 'init.vim')
+  end
+end
+
 namespace :fish do
   desc 'Create symbolic link to CONFIG'
   task :link do
-    symlink_ File.join(FISH_ROOT, 'config.fish'), File.join("#{CONFIG}/fish", 'config.fish')
-    symlink_ File.join(FISH_ROOT, 'completions'), File.join("#{CONFIG}/fish", 'completions')
+    symlink_ File.join(FISH_ROOT, 'config.fish'), File.join(FISH, 'config.fish')
+    symlink_ File.join(FISH_ROOT, 'completions'), File.join(FISH, 'completions')
   end
 end
 
@@ -89,6 +100,6 @@ end
 
 def same_name_symlinks root, files
   files.each do |file|
-    symlink_ File.join(root, file), File.join(HOME, '.' + file)
+    symlink_ File.join(root, file), File.join(HOME, ".#{file}")
   end
 end
