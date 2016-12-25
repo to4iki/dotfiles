@@ -13,6 +13,7 @@ GIT_ROOT  = File.join(File.dirname(__FILE__), 'git')
 PECO_ROOT = File.join(File.dirname(__FILE__), 'peco')
 TMUX_ROOT = File.join(File.dirname(__FILE__), 'tmux')
 VIM_ROOT  = File.join(File.dirname(__FILE__), 'vim')
+NVIM_ROOT  = File.join(File.dirname(__FILE__), 'nvim')
 FISH_ROOT = File.join(File.dirname(__FILE__), 'fish')
 OMF_ROOT = File.join(File.dirname(__FILE__), 'omf')
 ETC_DOT_FILES = Dir.glob('etc' + '/*').map { |path| File.basename(path) }
@@ -90,7 +91,7 @@ end
 namespace :nvim do
   desc 'Create symbolic link to CONFIG'
   task :link do
-    symlink_ File.join(VIM_ROOT, 'nvim/init.vim'), File.join(NVIM, 'init.vim')
+    symlink_ File.join(NVIM_ROOT, 'init.vim'), File.join(NVIM, 'init.vim')
   end
 end
 
