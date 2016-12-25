@@ -8,7 +8,7 @@
     diff = auto
 [core]
     pager = less
-    editor = vim
+    editor = nvim
 [alias]
     ad = add
     br = branch --verbose --verbose --color --sort=-authordate
