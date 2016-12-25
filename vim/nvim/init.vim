@@ -1,26 +1,21 @@
-" NeoBundle {{{
-set nocompatible
-filetype off
-filetype plugin indent off
-if has('vim_starting')
-    set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
+" dein {{{
+let s:dein_dir = expand('~/.config/nvim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &compatible
+  set nocompatible
 endif
+execute 'set runtimepath^=' . s:dein_repo_dir
 
-call neobundle#begin(expand('~/.config/nvim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'tomasr/molokai'
-
-call neobundle#end()
-
-filetype on
-filetype indent on
-filetype plugin on
+call dein#begin(s:dein_dir)
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('scrooloose/nerdcommenter')
+call dein#add('scrooloose/nerdtree')
+call dein#add('tomasr/molokai')
+call dein#end()
 " }}}
 
 " Common {{{
@@ -31,8 +26,10 @@ set nowrap
 set smartindent
 set clipboard+=unnamed
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+filetype plugin indent on
 
 " Color
+syntax enable
 syntax on
 colorscheme molokai
 
