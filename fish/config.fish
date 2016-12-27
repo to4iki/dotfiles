@@ -5,8 +5,8 @@ set -gx OMF_PATH $HOME/.local/share/omf
 # set -gx OMF_CONFIG $HOME/.config/omf
 
 ## PATH
-## homebrew-cask
-set -gx HOMEBREW_CASK_OPTS "--appdir=/Applications --caskroom=$HOME/Caskroom"
+# git
+set -gx PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
 # node.js
 set -gx PATH $HOME/.nodebrew/current/bin $PATH
 # Go
