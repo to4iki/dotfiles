@@ -132,9 +132,16 @@ let g:NERDTreeWinPos = "right"
 let NERDSpaceDelims = 1
 nmap ,, <Plug>NERDCommenterToggle
 vmap ,, <Plug>NERDCommenterToggle
-" }}
+" }}}
 
 " neosnippet {{{
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 " }}}
+
+" denite {{{
+nnoremap <silent> uf :<C-u>Denite file_rec<CR>
+nnoremap <silent> um :<C-u>Denite file_mru<CR>
+nnoremap <silent> uy :<C-u>Denite neoyank<CR>
+" }}}
+

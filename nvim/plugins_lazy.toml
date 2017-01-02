@@ -2,6 +2,9 @@
 repo = 'Shougo/denite.nvim'
 if = 'has("python3")'
 on_cmd = 'Denite'
+hook_post_source = '''
+    call denite#custom#var('grep', 'command', ['ag'])
+'''
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
@@ -17,3 +20,13 @@ on_ft = ['snippet']
 [[plugins]]
 repo = 'cohama/lexima.vim'
 on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+depends = 'denite.nvim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+depends = 'denite.nvim'
+on_event = 'TextYankPost'
