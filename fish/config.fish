@@ -47,6 +47,7 @@ source $OMF_PATH/init.fish
 function fish_user_key_bindings
     bind \cr peco_select_history
     bind \c] peco_select_ghq_repository
+    bind \cb peco_select_branch
 end
 
 ## OPTIONS
