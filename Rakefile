@@ -19,7 +19,6 @@ OMF_ROOT = File.join(File.dirname(__FILE__), 'omf')
 ETC_DOT_FILES = Dir.glob('etc' + '/*').map { |path| File.basename(path) }
 
 cleans = %w(
-    .agignore
     .gemrc
     .tigrc
     .gitconfig
