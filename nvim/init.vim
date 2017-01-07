@@ -143,5 +143,9 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 nnoremap <silent> uf :<C-u>Denite file_rec<CR>
 nnoremap <silent> um :<C-u>Denite file_mru<CR>
 nnoremap <silent> uy :<C-u>Denite neoyank<CR>
+nnoremap <silent> ug :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
+nnoremap <silent> ur :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
+nnoremap <silent> un :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately<CR>
+nnoremap <silent> up :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately<CR>
 " }}}
 
