@@ -48,6 +48,7 @@ function fish_user_key_bindings
     bind \cr peco_select_history
     bind \c] peco_select_ghq_repository
     bind \cb peco_select_branch
+    bind \co peco_open_repository
 end
 
 ## OPTIONS
