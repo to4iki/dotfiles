@@ -1,9 +1,3 @@
-# Path to Oh My Fish install.
-set -gx OMF_PATH $HOME/.local/share/omf
-
-# Customize Oh My Fish configuration path.
-# set -gx OMF_CONFIG $HOME/.config/omf
-
 ## PATH
 # git
 set -gx PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
@@ -38,17 +32,13 @@ alias gg 'git g'
 alias t 'tig'
 alias ta 'tig --all'
 alias be 'bundle exec'
-alias r 'repo'
-
-# Load oh-my-fish configuration.
-source $OMF_PATH/init.fish
 
 ## KEY_BINDINGS
 function fish_user_key_bindings
     bind \cr peco_select_history
     bind \c] peco_select_ghq_repository
-    bind \cb peco_select_branch
-    bind \co peco_open_repository
+    bind \cx\cr peco_recentd
+    bind \cx\cb peco_select_branch
 end
 
 ## OPTIONS

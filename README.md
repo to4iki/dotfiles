@@ -23,6 +23,7 @@ Any
 Just type `rake` or `rake link`.
 
 After dependent libraries install.
+- [fisherman/fisherman](https://github.com/fisherman/fisherman)
 - [Shougo/dein.vim](https://github.com/Shougo/dein.vim)
 
 ### clean

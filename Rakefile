@@ -29,7 +29,7 @@ cleans = %w(
     .config/nvim/plugins.toml
     .config/nvim/plugins_lazy.toml
     .config/fish/config.fish
-    .config/fish/completions
+    .config/fish/fishfile
 )
 
 CLEAN.concat(cleans.map { |c| File.join(HOME, c) })
@@ -100,7 +100,7 @@ namespace :fish do
   desc 'Create symbolic link to CONFIG'
   task :link do
     symlink_ File.join(FISH_ROOT, 'config.fish'), File.join(FISH, 'config.fish')
-    symlink_ File.join(FISH_ROOT, 'completions'), File.join(FISH, 'completions')
+    symlink_ File.join(FISH_ROOT, 'fishfile'), File.join(FISH, 'fishfile')
   end
 end
 
