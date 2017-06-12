@@ -15,7 +15,6 @@ TMUX_ROOT = File.join(File.dirname(__FILE__), 'tmux')
 VIM_ROOT  = File.join(File.dirname(__FILE__), 'vim')
 NVIM_ROOT  = File.join(File.dirname(__FILE__), 'nvim')
 FISH_ROOT = File.join(File.dirname(__FILE__), 'fish')
-OMF_ROOT = File.join(File.dirname(__FILE__), 'omf')
 ETC_DOT_FILES = Dir.glob('etc' + '/*').map { |path| File.basename(path) }
 
 cleans = %w(
@@ -31,13 +30,12 @@ cleans = %w(
     .config/nvim/plugins_lazy.toml
     .config/fish/config.fish
     .config/fish/completions
-    .config/omf
 )
 
 CLEAN.concat(cleans.map { |c| File.join(HOME, c) })
 
 task :default => :link
-task :link => %w(etc:link peco:link git:link tmux:link vim:link nvim:link fish:link omf:link)
+task :link => %w(etc:link peco:link git:link tmux:link vim:link nvim:link fish:link)
 task :boot => %w(bootstrap:mkdir bootstrap:install)
 
 namespace :bootstrap do
@@ -103,13 +101,6 @@ namespace :fish do
   task :link do
     symlink_ File.join(FISH_ROOT, 'config.fish'), File.join(FISH, 'config.fish')
     symlink_ File.join(FISH_ROOT, 'completions'), File.join(FISH, 'completions')
-  end
-end
-
-namespace :omf do
-  desc 'Create symbolic link to CONFIG'
-  task :link do
-    symlink_ OMF_ROOT, File.join(CONFIG, 'omf')
   end
 end
 
