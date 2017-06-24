@@ -21,6 +21,7 @@ cleans = %w(
     .gemrc
     .tigrc
     .gitconfig
+    .gitconfig-work
     .config/peco
     .tmux.conf
     .ideavimrc
@@ -62,7 +63,7 @@ end
 namespace :git do
   desc 'Create symbolic link to HOME'
   task :link do
-    same_name_symlinks GIT_ROOT, ['gitconfig']
+    same_name_symlinks GIT_ROOT, ['gitconfig', 'gitconfig-work']
   end
 end
 
