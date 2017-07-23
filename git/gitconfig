@@ -12,7 +12,6 @@
     pager = less
     editor = nvim
 [alias]
-    ad = add
     br = branch --verbose --verbose --color --sort=-authordate
     co = checkout
     commit = commit -v
@@ -23,7 +22,6 @@
     g = grep -n -p --color --heading --break
     info = remote show origin
     l = log --decorate
-    lp = log --decorate --stat --patch
     n = now --all --stat
     s = status -sb
     undo = reset --soft HEAD~
@@ -47,3 +45,6 @@
     diff = diff-highlight | less
 [interactive]
     diffFilter = diff-highlight
+[merge "mergepbx"]
+    name = Xcode project files merger
+    driver = mergepbx %O %A %B
