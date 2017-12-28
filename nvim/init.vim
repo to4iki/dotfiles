@@ -90,18 +90,6 @@ nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 
-" Resize
-nnoremap <C-E><C-k> :resize -3<CR>
-nnoremap <C-E><C-j> :resize +3<CR>
-nnoremap <C-E><C-h> :vertical resize +10<CR>
-nnoremap <C-E><C-l> :vertical resize -10<CR>
-
-" Move to shift lot
-nnoremap J 20j
-nnoremap K 20k
-nnoremap L 10l
-nnoremap H 10h
-
 " highlight
 nnoremap <F3> :noh<CR>
 
@@ -113,19 +101,8 @@ inoremap <C-e> <End>
 " VisualMode
 vnoremap v ^$h
 
-" TerminalMode
-tnoremap <silent> <ESC> <C-\><C-n>
-" }}}
-
 " Language {{{
 autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-" }}}
-
-" NERDTree {{{
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-let g:NERDTreeDirArrows=0
-let g:NERDTreeWinPos = "right"
 " }}}
 
 " NERDCommenter {{{
@@ -134,18 +111,9 @@ nmap ,, <Plug>NERDCommenterToggle
 vmap ,, <Plug>NERDCommenterToggle
 " }}}
 
-" neosnippet {{{
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-" }}}
-
 " denite {{{
 nnoremap <silent> uf :<C-u>Denite file_rec<CR>
 nnoremap <silent> um :<C-u>Denite file_mru<CR>
 nnoremap <silent> uy :<C-u>Denite neoyank<CR>
 nnoremap <silent> ug :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
-nnoremap <silent> ur :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
-nnoremap <silent> un :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately<CR>
-nnoremap <silent> up :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately<CR>
 " }}}
-
