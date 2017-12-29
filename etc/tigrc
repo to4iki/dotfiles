@@ -6,14 +6,9 @@ set ignore-space = all
 set ignore-case = true
 
 # Generic
-bind generic G none
-bind generic g move-first-line
-bind generic G move-last-line
 bind generic <Ctrl-f> scroll-page-down
 bind generic <Ctrl-b> scroll-page-up
 ## Github
-bind generic ^ !@hub browse
-bind generic - !@hub browse -- issues
 bind generic o !@hub browse -- commit/%(commit)
 
 # Main
@@ -22,7 +17,3 @@ bind main R !git rebase -i %(commit)
 # Branch
 bind branch n !git checkout -b %(prompt) %(branch)
 bind branch D !?git branch -D %(branch)
-bind branch d !?git branch -d %(branch)
-
-# Diff
-bind diff R !git rebase -i %(commit)

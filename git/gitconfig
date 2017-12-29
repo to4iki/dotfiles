@@ -18,7 +18,6 @@
     cav = commit -av
     d = diff --histogram
     f = fetch
-    fixup = commit --amend -C HEAD
     g = grep -n -p --color --heading --break
     info = remote show origin
     l = log --decorate
