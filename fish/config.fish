@@ -1,8 +1,6 @@
 ## PATH
 # git
 set -gx PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
-# node.js
-set -gx PATH $HOME/.nodebrew/current/bin $PATH
 # Go
 set -gx GOPATH $HOME
 # rbenv
