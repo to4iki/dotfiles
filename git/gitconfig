@@ -32,6 +32,7 @@
     root = ~/src
 [pull]
     rebase = true
+    ff = only
 [rebase]
     autoStash = true
 [stash]
@@ -47,3 +48,10 @@
 [merge "mergepbx"]
     name = Xcode project files merger
     driver = mergepbx %O %A %B
+[merge]
+    ff = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
