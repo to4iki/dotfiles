@@ -1,5 +1,5 @@
 [user]
-    name = tsk takezawa
+    name = Toshiki Takezawa
     email = tsk.take815@gmail.com
 [includeIf "gitdir:~/src/github.com/to4iki/"]
     path = ~/.gitconfig-work
