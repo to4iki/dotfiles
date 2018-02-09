@@ -10,7 +10,6 @@ execute 'set runtimepath^=' . s:dein_repo_dir
 
 call dein#begin(s:dein_dir)
 call dein#load_toml(s:nvim_dir . '/plugins.toml', {'lazy': 0})
-call dein#load_toml(s:nvim_dir . '/plugins_lazy.toml', {'lazy': 1})
 call dein#end()
 " }}}
 
@@ -109,11 +108,4 @@ autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabsto
 let NERDSpaceDelims = 1
 nmap ,, <Plug>NERDCommenterToggle
 vmap ,, <Plug>NERDCommenterToggle
-" }}}
-
-" denite {{{
-nnoremap <silent> uf :<C-u>Denite file_rec<CR>
-nnoremap <silent> um :<C-u>Denite file_mru<CR>
-nnoremap <silent> uy :<C-u>Denite neoyank<CR>
-nnoremap <silent> ug :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
 " }}}
