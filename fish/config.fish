@@ -30,6 +30,7 @@ alias gg 'git g'
 alias t 'tig'
 alias ta 'tig --all'
 alias be 'bundle exec'
+alias run 'cmdshelf run'
 
 ## KEY_BINDINGS
 function fish_user_key_bindings
