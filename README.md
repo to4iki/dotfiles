@@ -3,12 +3,19 @@ dotfiles
 
 ~/.
 
-## Usage
+## Installation
+
 before.
 
 [Homebrew — The missing package manager for OS X](http://brew.sh/)
 
-### bootstrap
+### my handy scripts
+[to4iki/scripts](https://github.com/to4iki/scripts)
+
+### package & application
+Any
+
+## Bootstrap
 
 ```bash
 $ git clone https://github.com/to4iki/dotfiles ~/.dotfiles
@@ -16,15 +23,12 @@ $ cd ~/.dotfiles
 $ rake boot
 ```
 
-### package & application install
-Any
-
-### setup
+### Setup
 Just type `rake` or `rake link`.
 
 After dependent libraries install.
 - [fisherman/fisherman](https://github.com/fisherman/fisherman)
 - [Shougo/dein.vim](https://github.com/Shougo/dein.vim)
 
-### clean
+### Clean
 Just type `rake clean`.
