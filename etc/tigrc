@@ -10,7 +10,7 @@ bind generic <Ctrl-f> scroll-page-down
 bind generic <Ctrl-b> scroll-page-up
 ## Github
 bind generic o !@hub browse -- commit/%(commit)
-bind generic P !@cmdshelf run github/open-pull-request.sh %(commit)
+bind generic P !@whichpr open %(commit)
 
 # Main
 bind main R !git rebase -i %(commit)
