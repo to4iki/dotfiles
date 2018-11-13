@@ -27,7 +27,7 @@ $ rake boot
 Just type `rake` or `rake link`.
 
 After dependent libraries install.
-- [fisherman/fisherman](https://github.com/fisherman/fisherman)
+- [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
 - [Shougo/dein.vim](https://github.com/Shougo/dein.vim)
 
 ### Clean

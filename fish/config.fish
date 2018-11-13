@@ -36,8 +36,6 @@ alias run 'cmdshelf run'
 function fish_user_key_bindings
     bind \cr peco_select_history
     bind \c] peco_select_ghq_repository
-    bind \cx\cr peco_recentd
-    bind \cx\cb peco_select_branch
 end
 
 ## OPTIONS
