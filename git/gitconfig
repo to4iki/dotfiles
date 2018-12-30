@@ -14,8 +14,7 @@
 [alias]
     br = branch --verbose --verbose --color --sort=-authordate
     co = checkout
-    commit = commit -v
-    cav = commit -av
+    c = commit -av
     d = diff --histogram
     f = fetch
     g = grep -n -p --color --heading --break
