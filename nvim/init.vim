@@ -68,10 +68,6 @@ set statusline=%f%m%=%y[%{&fileencoding}][%{&fileformat}]
 autocmd CursorHold * wall
 set updatetime=100
 
-" KeyMapping
-nnoremap ; :
-nnoremap : ;
-
 nnoremap x "_x
 vnoremap x "_x
 

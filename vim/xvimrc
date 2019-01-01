@@ -4,10 +4,6 @@ set clipboard+=unnamed
 set clipboard=unnamed
 " }}}
 
-" KeyMapping {{{
-noremap ; :
-noremap : ;
-
 " NormalMode
 nnoremap x "_x
 vnoremap x "_x
