@@ -24,7 +24,8 @@
     s = status -sb
     undo = reset --soft HEAD~
     open = browse
-    opr = !git fetch origin pull/${1}/head:pr/${1} && git checkout pr/${1}
+    co-pr = !git fetch origin pull/${1}/head:pr/${1} && git checkout pr/${1}
+    f-push = push --force-with-lease
 [tig "bind"]
     generic = g move-first-line
     generic = G move-last-line
