@@ -9,6 +9,8 @@ set -gx RBENV_ROOT $HOME/.rbenv/
 set -gx Z_SCRIPT_PATH (brew --prefix)/etc/profile.d/z.sh
 # NeoVim
 set -gx XDG_CONFIG_HOME $HOME/.config
+# Local scripts
+set -gx PATH $HOME/src/github.com/to4iki/dotfiles/bin $PATH
 
 ## EDITOR
 set -U EDITOR vim
