@@ -1,12 +1,8 @@
 fisherman/getopts
 fisherman/git_util
-fisherman/host_info
-fisherman/humanize_duration
-fisherman/last_job_id
 oh-my-fish/plugin-peco
 yoshiori/fish-peco_select_ghq_repository
-fisherman/pwd_info
-fisherman/pwd_is_home
 fisherman/rbenv
-fisherman/sol
 fisherman/z
+to4iki/fish_peco_select_branch
+fisherman/sol
