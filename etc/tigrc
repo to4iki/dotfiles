@@ -14,6 +14,7 @@ bind generic <Ctrl-b> scroll-page-up
 bind generic <Ctrl-g> refresh
 bind generic g move-first-line
 bind generic G move-last-line
+bind generic y @sh -c "echo %(commit) | pbcopy"
 
 bind main B !@hub browse -- commit/%(commit)
 bind status B !@hub browse -- blob/master/%(file)
