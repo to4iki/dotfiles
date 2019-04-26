@@ -18,20 +18,20 @@ FISH_ROOT = File.join(File.dirname(__FILE__), 'fish')
 ETC_DOT_FILES = Dir.glob('etc' + '/*').map { |path| File.basename(path) }
 
 cleans = %w(
-    .gemrc
-    .tigrc
-    .gitconfig
-    .gitconfig-work
-    .config/peco
-    .lldbinit
-    .tmux.conf
-    .ideavimrc
-    .xvimrc
-    .config/nvim/init.vim
-    .config/nvim/plugins.toml
-    .config/nvim/plugins_lazy.toml
-    .config/fish/config.fish
-    .config/fish/fishfile
+  .gemrc
+  .tigrc
+  .gitconfig
+  .gitconfig-work
+  .config/peco
+  .lldbinit
+  .tmux.conf
+  .ideavimrc
+  .xvimrc
+  .config/nvim/init.vim
+  .config/nvim/plugins.toml
+  .config/nvim/plugins_lazy.toml
+  .config/fish/config.fish
+  .config/fish/fishfile
 )
 
 CLEAN.concat(cleans.map { |c| File.join(HOME, c) })

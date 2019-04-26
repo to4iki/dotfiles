@@ -9,9 +9,6 @@ before.
 
 [Homebrew — The missing package manager for OS X](http://brew.sh/)
 
-### my handy scripts
-[to4iki/scripts](https://github.com/to4iki/scripts)
-
 ### package & application
 Any
 

@@ -18,7 +18,6 @@
     d = diff --histogram
     f = fetch
     g = grep -n -p --color --heading --break
-    info = remote show origin
     l = log --decorate
     n = now --all --stat
     s = status -sb
