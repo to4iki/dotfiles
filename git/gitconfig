@@ -13,18 +13,18 @@
     editor = nvim
 [alias]
     br = branch --verbose --verbose --color --sort=-authordate
+    cl = clone --depth 1
     co = checkout
     c = commit -av
     d = diff --histogram
     f = fetch
     g = grep -n -p --color --heading --break
-    l = log --decorate
+    l = log --oneline
     n = now --all --stat
     s = status -sb
     undo = reset --soft HEAD~
-    open = browse
-    co-pr = !git fetch origin pull/${1}/head:pr/${1} && git checkout pr/${1}
-    f-push = push --force-with-lease
+    o = browse
+    copr = !git fetch origin pull/${1}/head:pr/${1} && git checkout pr/${1}
 [tig "bind"]
     generic = g move-first-line
     generic = G move-last-line
@@ -51,7 +51,7 @@
 [merge]
     ff = false
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
