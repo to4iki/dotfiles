@@ -50,7 +50,12 @@ namespace :bootstrap do
 
   desc 'Install dependent libraries'
   task :install do
-    # TODO: impl
+    ## fisher
+    # curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+
+    ## dein
+    # curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+    # sh installer.sh ~/.config/nvim/dein/
   end
 end
 
