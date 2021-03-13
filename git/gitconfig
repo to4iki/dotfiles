@@ -9,13 +9,12 @@
     status = auto
     diff = auto
 [core]
-    pager = less
+    pager = delta
     editor = nvim
 [alias]
     br = branch --verbose --verbose --color --sort=-authordate
     cl = clone --depth 1
     co = checkout
-    c = commit -av
     d = diff --histogram
     f = fetch
     g = grep -n -p --color --heading --break
@@ -38,12 +37,8 @@
     showPatch = true
 [diff]
     compactionHeuristic = true
-[pager]
-    log = diff-highlight | less
-    show = diff-highlight | less
-    diff = diff-highlight | less
 [interactive]
-    diffFilter = diff-highlight
+    diffFilter = delta --color-only
 [merge "mergepbx"]
     name = Xcode project files merger
     driver = mergepbx %O %A %B
