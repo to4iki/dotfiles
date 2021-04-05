@@ -13,11 +13,9 @@
     editor = nvim
 [alias]
     br = branch --verbose --verbose --color --sort=-authordate
-    cl = clone --depth 1
     co = checkout
     d = diff --histogram
     f = fetch
-    g = grep -n -p --color --heading --break
     l = log --oneline
     n = now --all --stat
     s = status -sb

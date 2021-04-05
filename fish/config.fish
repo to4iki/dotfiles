@@ -33,8 +33,6 @@ alias b 'git br'
 alias m 'git co master'
 alias d 'git d'
 alias t 'tig'
-alias be 'bundle exec'
-alias run 'cmdshelf run'
 
 ## KEY_BINDINGS
 function fish_user_key_bindings
