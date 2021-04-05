@@ -1,6 +1,6 @@
 fisherman/git_util
-oh-my-fish/plugin-peco
-yoshiori/fish-peco_select_ghq_repository
 fisherman/rbenv
-to4iki/fish_peco_select_branch
 oh-my-fish/theme-default
+decors/fish-ghq
+jethrokuan/fzf
+tsub/fish-fzf-git-recent-branch

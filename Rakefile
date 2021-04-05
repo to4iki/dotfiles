@@ -9,7 +9,6 @@ FISH = "#{CONFIG}/fish"
 # source
 ETC_ROOT  = File.join(File.dirname(__FILE__), 'etc')
 GIT_ROOT  = File.join(File.dirname(__FILE__), 'git')
-PECO_ROOT = File.join(File.dirname(__FILE__), 'peco')
 TMUX_ROOT = File.join(File.dirname(__FILE__), 'tmux')
 VIM_ROOT  = File.join(File.dirname(__FILE__), 'vim')
 FISH_ROOT = File.join(File.dirname(__FILE__), 'fish')
@@ -20,7 +19,6 @@ cleans = %w(
   .tigrc
   .gitconfig
   .gitconfig-work
-  .config/peco
   .tmux.conf
   .vimrc
   .ideavimrc
@@ -32,7 +30,7 @@ cleans = %w(
 CLEAN.concat(cleans.map { |c| File.join(HOME, c) })
 
 task :default => :link
-task :link => %w(etc:link peco:link git:link tmux:link vim:link fish:link)
+task :link => %w(etc:link git:link tmux:link vim:link fish:link)
 task :boot => %w(bootstrap:mkdir bootstrap:install)
 
 namespace :bootstrap do
@@ -59,13 +57,6 @@ namespace :git do
   desc 'Create symbolic link to HOME'
   task :link do
     same_name_symlinks GIT_ROOT, ['gitconfig', 'gitconfig-work']
-  end
-end
-
-namespace :peco do
-  desc 'Create symbolic link to CONFIG'
-  task :link do
-    symlink_ PECO_ROOT, File.join(CONFIG, 'peco')
   end
 end
 

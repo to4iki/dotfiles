@@ -28,12 +28,13 @@ alias t 'tig'
 
 ## KEY_BINDINGS
 function fish_user_key_bindings
-    bind \cr peco_select_history
-    bind \c] peco_select_ghq_repository
-    bind \cb peco_select_branch
+    bind \co __fzf_open --editor
+    bind \cr __fzf_reverse_isearch
+    bind \c] __ghq_repository_search
+    bind \cb fzf_git_recent_branch
 end
 
 ## OPTIONS
-function peco
-    command peco --layout=bottom-up $argv
+function fzf
+    command fzf --height 30% --reverse --border $argv
 end
