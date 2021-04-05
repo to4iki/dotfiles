@@ -23,7 +23,6 @@ cleans = %w(
   .gitconfig
   .gitconfig-work
   .config/peco
-  .lldbinit
   .tmux.conf
   .ideavimrc
   .xvimrc
