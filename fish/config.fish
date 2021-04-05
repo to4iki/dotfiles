@@ -5,8 +5,6 @@ set -x PATH $HOME//Library/Android/sdk/platform-tools $PATH
 set -x GOPATH $HOME
 # rbenv
 set -x RBENV_ROOT $HOME/.rbenv/
-# z
-set -x Z_SCRIPT_PATH (brew --prefix)/etc/profile.d/z.sh
 # Local scripts
 set -x PATH $HOME/src/github.com/to4iki/dotfiles/bin $PATH
 
