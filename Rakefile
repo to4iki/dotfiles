@@ -4,7 +4,6 @@ require 'rake/clean'
 # destination
 HOME = ENV['HOME']
 CONFIG = "#{HOME}/.config"
-NVIM = "#{CONFIG}/nvim"
 FISH = "#{CONFIG}/fish"
 
 # source
@@ -13,7 +12,6 @@ GIT_ROOT  = File.join(File.dirname(__FILE__), 'git')
 PECO_ROOT = File.join(File.dirname(__FILE__), 'peco')
 TMUX_ROOT = File.join(File.dirname(__FILE__), 'tmux')
 VIM_ROOT  = File.join(File.dirname(__FILE__), 'vim')
-NVIM_ROOT  = File.join(File.dirname(__FILE__), 'nvim')
 FISH_ROOT = File.join(File.dirname(__FILE__), 'fish')
 ETC_DOT_FILES = Dir.glob('etc' + '/*').map { |path| File.basename(path) }
 
@@ -24,11 +22,9 @@ cleans = %w(
   .gitconfig-work
   .config/peco
   .tmux.conf
+  .vimrc
   .ideavimrc
   .xvimrc
-  .config/nvim/init.vim
-  .config/nvim/plugins.toml
-  .config/nvim/plugins_lazy.toml
   .config/fish/config.fish
   .config/fish/fishfile
 )
@@ -36,25 +32,19 @@ cleans = %w(
 CLEAN.concat(cleans.map { |c| File.join(HOME, c) })
 
 task :default => :link
-task :link => %w(etc:link peco:link git:link tmux:link vim:link nvim:link fish:link)
+task :link => %w(etc:link peco:link git:link tmux:link vim:link fish:link)
 task :boot => %w(bootstrap:mkdir bootstrap:install)
 
 namespace :bootstrap do
   desc 'Make directory for initialization'
   task :mkdir do
-    mkdir_if_needed(NVIM)
     mkdir_if_needed(FISH)
-    mkdir_if_needed("#{NVIM}/dein")
   end
 
   desc 'Install dependent libraries'
   task :install do
     ## fisher
     # curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-
-    ## dein
-    # curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-    # sh installer.sh ~/.config/nvim/dein/
   end
 end
 
@@ -89,15 +79,7 @@ end
 namespace :vim do
   desc 'Create symbolic link to HOME'
   task :link do
-    same_name_symlinks VIM_ROOT, ['ideavimrc', 'xvimrc']
-  end
-end
-
-namespace :nvim do
-  desc 'Create symbolic link to CONFIG'
-  task :link do
-    symlink_ File.join(NVIM_ROOT, 'init.vim'), File.join(NVIM, 'init.vim')
-    symlink_ File.join(NVIM_ROOT, 'plugins.toml'), File.join(NVIM, 'plugins.toml')
+    same_name_symlinks VIM_ROOT, ['vimrc', 'ideavimrc', 'xvimrc']
   end
 end
 

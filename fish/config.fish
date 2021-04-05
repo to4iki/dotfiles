@@ -7,8 +7,6 @@ set -x GOPATH $HOME
 set -x RBENV_ROOT $HOME/.rbenv/
 # z
 set -x Z_SCRIPT_PATH (brew --prefix)/etc/profile.d/z.sh
-# NeoVim
-set -x XDG_CONFIG_HOME $HOME/.config
 # Local scripts
 set -x PATH $HOME/src/github.com/to4iki/dotfiles/bin $PATH
 
@@ -20,8 +18,6 @@ set -x LANG ja_JP.UTF-8
 
 ## ALIAS
 alias l 'ls -la'
-alias vim 'nvim'
-alias vi 'vim'
 alias v 'vim'
 alias o 'open'
 alias git 'hub'
