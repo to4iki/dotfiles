@@ -1,6 +1,4 @@
 ## PATH
-# git
-set -x PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
 # Android
 set -x PATH $HOME//Library/Android/sdk/platform-tools $PATH
 # Go

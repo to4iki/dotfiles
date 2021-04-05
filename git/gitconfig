@@ -9,8 +9,7 @@
     status = auto
     diff = auto
 [core]
-    pager = delta
-    editor = nvim
+    editor = vim
 [alias]
     br = branch --verbose --verbose --color --sort=-authordate
     co = checkout
@@ -35,15 +34,5 @@
     showPatch = true
 [diff]
     compactionHeuristic = true
-[interactive]
-    diffFilter = delta --color-only
-[merge "mergepbx"]
-    name = Xcode project files merger
-    driver = mergepbx %O %A %B
 [merge]
     ff = false
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
