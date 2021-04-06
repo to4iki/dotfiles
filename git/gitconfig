@@ -19,7 +19,6 @@
     n = now --all --stat
     s = status -sb
     undo = reset --soft HEAD~
-    o = browse
 [tig "bind"]
     generic = g move-first-line
     generic = G move-last-line

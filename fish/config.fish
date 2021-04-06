@@ -19,8 +19,6 @@ set -x LANG ja_JP.UTF-8
 ## ALIAS
 alias l 'ls -la'
 alias v 'vim'
-alias o 'open'
-alias git 'hub'
 alias g 'git'
 alias s 'git s'
 alias b 'git br'
