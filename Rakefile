@@ -24,7 +24,7 @@ cleans = %w(
   .ideavimrc
   .xvimrc
   .config/fish/config.fish
-  .config/fish/fishfile
+  .config/fish/fish_plugins
 )
 
 CLEAN.concat(cleans.map { |c| File.join(HOME, c) })
@@ -78,7 +78,7 @@ namespace :fish do
   desc 'Create symbolic link to CONFIG'
   task :link do
     symlink_ File.join(FISH_ROOT, 'config.fish'), File.join(FISH, 'config.fish')
-    symlink_ File.join(FISH_ROOT, 'fishfile'), File.join(FISH, 'fishfile')
+    symlink_ File.join(FISH_ROOT, 'fish_plugins'), File.join(FISH, 'fish_plugins')
   end
 end
 
