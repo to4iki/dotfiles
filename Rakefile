@@ -5,9 +5,11 @@ require 'rake/clean'
 HOME = ENV['HOME']
 CONFIG = "#{HOME}/.config"
 FISH = "#{CONFIG}/fish"
+GH  = "#{CONFIG}/gh"
 
 # source
 ETC_ROOT  = File.join(File.dirname(__FILE__), 'etc')
+GH_ROOT  = File.join(File.dirname(__FILE__), 'gh')
 GIT_ROOT  = File.join(File.dirname(__FILE__), 'git')
 TMUX_ROOT = File.join(File.dirname(__FILE__), 'tmux')
 VIM_ROOT  = File.join(File.dirname(__FILE__), 'vim')
@@ -25,18 +27,20 @@ cleans = %w(
   .xvimrc
   .config/fish/config.fish
   .config/fish/fish_plugins
+  .config/gh/config.yml
 )
 
 CLEAN.concat(cleans.map { |c| File.join(HOME, c) })
 
 task :default => :link
-task :link => %w(etc:link git:link tmux:link vim:link fish:link)
+task :link => %w(etc:link git:link gh:link tmux:link vim:link fish:link)
 task :boot => %w(bootstrap:mkdir bootstrap:install)
 
 namespace :bootstrap do
   desc 'Make directory for initialization'
   task :mkdir do
     mkdir_if_needed(FISH)
+    mkdir_if_needed(GH)
   end
 
   desc 'Install dependent libraries'
@@ -57,6 +61,13 @@ namespace :git do
   desc 'Create symbolic link to HOME'
   task :link do
     same_name_symlinks GIT_ROOT, ['gitconfig', 'gitconfig-work']
+  end
+end
+
+namespace :gh do
+  desc 'Create symbolic link to CONFIG'
+  task :link do
+    symlink_ File.join(GH_ROOT, 'config.yml'), File.join(GH, 'config.yml')
   end
 end
 
