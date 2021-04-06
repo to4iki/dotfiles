@@ -1,4 +1,6 @@
 ## PATH
+# Homebrew
+set -x PATH /opt/homebrew/bin:/usr/local/bin $PATH
 # Android
 set -x PATH $HOME//Library/Android/sdk/platform-tools $PATH
 # Go
