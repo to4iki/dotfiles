@@ -9,8 +9,8 @@ before.
 
 [Homebrew — The missing package manager for OS X](http://brew.sh/)
 
-### package & application
-Any
+### package
+[brew\-list\.txt](https://gist.github.com/to4iki/aeee55a2126ffecb7199cd3b644b3e19)
 
 ## Bootstrap
 
