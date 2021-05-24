@@ -31,7 +31,7 @@ function fish_user_key_bindings
     bind \co __fzf_open --editor
     bind \cr __fzf_reverse_isearch
     bind \c] __ghq_repository_search
-    bind \cb fzf_git_recent_branch
+    bind \cb __fzf_select_branch
 end
 
 ## OPTIONS
