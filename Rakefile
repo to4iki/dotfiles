@@ -24,7 +24,6 @@ cleans = %w(
   .tmux.conf
   .vimrc
   .ideavimrc
-  .xvimrc
   .config/fish/config.fish
   .config/fish/fish_plugins
   .config/gh/config.yml
@@ -81,7 +80,7 @@ end
 namespace :vim do
   desc 'Create symbolic link to HOME'
   task :link do
-    same_name_symlinks VIM_ROOT, ['vimrc', 'ideavimrc', 'xvimrc']
+    same_name_symlinks VIM_ROOT, ['vimrc', 'ideavimrc']
   end
 end
 
