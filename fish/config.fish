@@ -1,22 +1,14 @@
-## PATH
-# Homebrew
-set -x PATH /opt/homebrew/bin:/usr/local/bin $PATH
-# Android
-set -x PATH $HOME//Library/Android/sdk/platform-tools $PATH
-# Go
+## path
+set -x PATH /opt/homebrew/bin $PATH
 set -x GOPATH $HOME
-# rbenv
 set -x RBENV_ROOT $HOME/.rbenv/
-# Local scripts
 set -x PATH $HOME/src/github.com/to4iki/dotfiles/bin $PATH
 
-## EDITOR
+## setting
 set -x EDITOR vim
-
-## LANGUAGE
 set -x LANG ja_JP.UTF-8
 
-## ALIAS
+## alias
 alias l 'ls -la'
 alias v 'vim'
 alias g 'git'
@@ -26,7 +18,7 @@ alias m 'git co master'
 alias d 'git d'
 alias t 'tig'
 
-## KEY_BINDINGS
+## key binding
 function fish_user_key_bindings
     bind \co __fzf_open --editor
     bind \cr __fzf_reverse_isearch
@@ -34,7 +26,7 @@ function fish_user_key_bindings
     bind \cb __fzf_select_branch
 end
 
-## OPTIONS
+## option
 function fzf
     command fzf --height 30% --reverse --border $argv
 end

@@ -12,6 +12,7 @@
     editor = vim
 [alias]
     br = branch --verbose --verbose --color --sort=-authordate
+    undo = reset --soft HEAD~
     cancel = !git commit -a -m 'Temporary commit for cancel' && git reset --hard HEAD~
     co = checkout
     d = diff --histogram
@@ -19,7 +20,6 @@
     l = log --oneline
     n = now --all --stat
     s = status -sb
-    undo = reset --soft HEAD~
 [tig "bind"]
     generic = g move-first-line
     generic = G move-last-line
