@@ -1,85 +1,91 @@
-" Common {{{
+" Basic Settings ---------------------
 set nocompatible
-set number
-set backspace=2
-set nowrap
-set smartindent
+set hidden
+set backspace=indent,eol,start
 set clipboard+=unnamed
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+set belloff=all
 filetype plugin indent on
 
-" Color
-syntax enable
+" Visual Settings ------------------
 syntax on
+set number
+set nowrap
+set smartindent
+set termguicolors
+set cursorline
 
-" brackets
-set showmatch
-set list listchars=trail:_
+" Display special characters
+set list
+set listchars=tab:»-,trail:_,extends:>,precedes:<,nbsp:%
 set showmatch
 
-" Tab
+" Tab settings
 set ts=2 sw=2 sts=0
 set expandtab
 set autoindent
 set showtabline=4
 
-" Completion
-set wildmenu
-set omnifunc=syntaxcomplete#Complete
+" Status Line
+set laststatus=2
+set showcmd
+set statusline=%f%m%=%y[%{&fileencoding}][%{&fileformat}]
 
-" Search
+" Search Settings ------------------
 set hlsearch
 set ignorecase
 set smartcase
 set incsearch
 
-" Option
+" File Management -----------------
 set autoread
 set noswapfile
 set nobackup
 set visualbell t_vb=
-
-" Line
 set modeline
 set modelines=3
-set laststatus=2
-set showcmd
 
-" Status Line
-set statusline=%f%m%=%y[%{&fileencoding}][%{&fileformat}]
+" Completion
+set wildmenu
+set omnifunc=syntaxcomplete#Complete
 
-" Auto Save
-autocmd CursorHold * wall
-set updatetime=100
-
+" Key Mappings -------------------
+" Normal Mode
 nnoremap x "_x
-vnoremap x "_x
-
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 
+" Tab operations
 nnoremap st :<C-u>tabnew<CR>
 nnoremap sn gt
 nnoremap sp gT
 
+" Window operations
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 
-" highlight
+" Clear search highlight
 nnoremap <F3> :noh<CR>
 
-" InsertMode
+" Insert Mode
 inoremap <silent> jj <ESC>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 
-" VisualMode
+" Visual Mode
+vnoremap x "_x
 vnoremap v ^$h
 
-" Language {{{
-autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-" }}}
+" Auto Commands ------------------
+" Restore cursor position
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+
+" Auto save
+set updatetime=1000
+autocmd CursorHold * wall

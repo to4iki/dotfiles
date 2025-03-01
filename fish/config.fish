@@ -14,7 +14,7 @@ alias v 'vim'
 alias g 'git'
 alias s 'git s'
 alias b 'git br'
-alias m 'git co master'
+alias m 'git sw master'
 alias d 'git d'
 alias t 'tig'
 

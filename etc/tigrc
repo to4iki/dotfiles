@@ -7,6 +7,9 @@ set ignore-space = all
 set ignore-case = true
 set diff-highlight = true
 set refresh-mode = auto
+set line-graphics = utf-8
+set tab-size = 2
+set commit-order = topo
 
 # Alias
 bind generic <Ctrl-f> scroll-page-down
