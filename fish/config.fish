@@ -1,12 +1,12 @@
 ## path
-set -x PATH /opt/homebrew/bin $PATH
-set -x GOPATH $HOME
-set -x RBENV_ROOT $HOME/.rbenv/
-set -x PATH $HOME/src/github.com/to4iki/dotfiles/bin $PATH
+set -gx PATH /opt/homebrew/bin $PATH
+set -gx PATH $HOME/src/github.com/to4iki/dotfiles/bin $PATH
+set -gx GOPATH $HOME
+set -gx RBENV_ROOT $HOME/.rbenv/
 
 ## setting
-set -x EDITOR vim
-set -x LANG ja_JP.UTF-8
+set -gx EDITOR vim
+set -gx LANG ja_JP.UTF-8
 
 ## alias
 alias l 'ls -la'
