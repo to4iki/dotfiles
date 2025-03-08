@@ -22,13 +22,13 @@ alias t 'tig'
 
 ## key binding
 function fish_user_key_bindings
-    bind \co __fzf_open --editor
-    bind \cr __fzf_reverse_isearch
-    bind \c] __ghq_repository_search
-    bind \cb __fzf_select_branch
+  bind \co __fzf_open --editor
+  bind \cr __fzf_reverse_isearch
+  bind \c] __ghq_repository_search
+  bind \cb __fzf_select_branch
 end
 
 ## option
 function fzf
-    command fzf --height 30% --reverse --border $argv
+  command fzf --height 30% --reverse --border $argv
 end
