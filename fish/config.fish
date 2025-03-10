@@ -2,7 +2,6 @@
 set -gx PATH /opt/homebrew/bin $PATH
 set -gx PATH $HOME/src/github.com/to4iki/dotfiles/bin $PATH
 set -gx GOPATH $HOME
-set -gx RBENV_ROOT $HOME/.rbenv/
 set -gx VOLTA_HOME $HOME/.volta
 set -gx PATH $VOLTA_HOME/bin $PATH
 
