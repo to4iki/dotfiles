@@ -10,6 +10,7 @@ GIT_ROOT := $(CURDIR)/git
 TMUX_ROOT := $(CURDIR)/tmux
 VIM_ROOT := $(CURDIR)/vim
 FISH_ROOT := $(CURDIR)/fish
+CLAUDE_ROOT := $(CURDIR)/claude
 
 # Targets to clean
 CLEAN_TARGETS := \
@@ -22,13 +23,15 @@ CLEAN_TARGETS := \
 	$(HOME)/.ideavimrc \
 	$(CONFIG)/fish/config.fish \
 	$(CONFIG)/fish/fish_plugins \
-	$(CONFIG)/gh/config.yml
+	$(CONFIG)/gh/config.yml \
+	$(HOME)/.claude/CLAUDE.md \
+	$(HOME)/.claude/settings.json
 
-.PHONY: default link boot clean bootstrap etc git gh tmux vim fish
+.PHONY: default link boot clean bootstrap etc git gh tmux vim fish claude
 
 default: link
 
-link: etc git gh tmux vim fish
+link: etc git gh tmux vim fish claude
 
 boot: bootstrap
 
@@ -62,3 +65,7 @@ vim:
 fish:
 	@ln -sf $(FISH_ROOT)/config.fish $(FISH)/config.fish
 	@ln -sf $(FISH_ROOT)/fish_plugins $(FISH)/fish_plugins
+
+claude:
+	@ln -sf $(CLAUDE_ROOT)/CLAUDE.md $(HOME)/.claude/CLAUDE.md
+	@ln -sf $(CLAUDE_ROOT)/settings.json $(HOME)/.claude/settings.json
