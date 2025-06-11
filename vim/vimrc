@@ -23,7 +23,7 @@ set showmatch
 set ts=2 sw=2 sts=0
 set expandtab
 set autoindent
-set showtabline=4
+set showtabline=2
 
 " Status Line
 set laststatus=2
@@ -86,6 +86,6 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-" Auto save
+" Auto save (current buffer only)
 set updatetime=1000
-autocmd CursorHold * wall
+autocmd CursorHold * update
