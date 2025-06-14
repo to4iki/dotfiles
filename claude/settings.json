@@ -6,5 +6,7 @@
       "Bash(gh:*)"
     ],
     "deny": []
-  }
+  },
+  "model": "sonnet",
+  "preferredNotifChannel": "terminal_bell"
 }

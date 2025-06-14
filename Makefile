@@ -8,7 +8,6 @@ GHOSTY := $(CONFIG)/ghostty
 ETC_ROOT := $(CURDIR)/etc
 GH_ROOT := $(CURDIR)/gh
 GIT_ROOT := $(CURDIR)/git
-TMUX_ROOT := $(CURDIR)/tmux
 VIM_ROOT := $(CURDIR)/vim
 FISH_ROOT := $(CURDIR)/fish
 GHOSTTY_ROOT := $(CURDIR)/ghostty
@@ -30,7 +29,7 @@ CLEAN_TARGETS := \
 	$(HOME)/.claude/CLAUDE.md \
 	$(HOME)/.claude/settings.json
 
-.PHONY: default link boot clean bootstrap etc git gh tmux vim fish ghostty claude
+.PHONY: default link boot clean bootstrap etc git gh vim fish ghostty claude
 
 default: link
 
@@ -51,6 +50,7 @@ clean:
 etc:
 	@ln -sf $(ETC_ROOT)/gemrc $(HOME)/.gemrc
 	@ln -sf $(ETC_ROOT)/tigrc $(HOME)/.tigrc
+	@ln -sf $(ETC_ROOT)/tmux.conf $(HOME)/.tmux.conf
 
 git:
 	@ln -sf $(GIT_ROOT)/gitconfig $(HOME)/.gitconfig
@@ -58,9 +58,6 @@ git:
 
 gh:
 	@ln -sf $(GH_ROOT)/config.yml $(GH)/config.yml
-
-tmux:
-	@ln -sf $(TMUX_ROOT)/tmux.conf $(HOME)/.tmux.conf
 
 vim:
 	@ln -sf $(VIM_ROOT)/vimrc $(HOME)/.vimrc
