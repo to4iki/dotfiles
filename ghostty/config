@@ -1,0 +1,17 @@
+# Window
+macos-titlebar-style = tabs
+macos-window-shadow = false
+window-width = 150
+window-height = 70
+
+# Font
+font-feature = "-calt"
+font-feature = "-dlig"
+font-feature = "-liga"
+
+# Shell
+shell-integration-features = no-cursor
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false

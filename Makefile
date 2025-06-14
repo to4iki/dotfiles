@@ -3,6 +3,7 @@ HOME := $(HOME)
 CONFIG := $(HOME)/.config
 FISH := $(CONFIG)/fish
 GH := $(CONFIG)/gh
+GHOSTY := $(CONFIG)/ghostty
 
 ETC_ROOT := $(CURDIR)/etc
 GH_ROOT := $(CURDIR)/gh
@@ -10,6 +11,7 @@ GIT_ROOT := $(CURDIR)/git
 TMUX_ROOT := $(CURDIR)/tmux
 VIM_ROOT := $(CURDIR)/vim
 FISH_ROOT := $(CURDIR)/fish
+GHOSTTY_ROOT := $(CURDIR)/ghostty
 CLAUDE_ROOT := $(CURDIR)/claude
 
 # Targets to clean
@@ -24,20 +26,22 @@ CLEAN_TARGETS := \
 	$(CONFIG)/fish/config.fish \
 	$(CONFIG)/fish/fish_plugins \
 	$(CONFIG)/gh/config.yml \
+	$(CONFIG)/ghostty/config \
 	$(HOME)/.claude/CLAUDE.md \
 	$(HOME)/.claude/settings.json
 
-.PHONY: default link boot clean bootstrap etc git gh tmux vim fish claude
+.PHONY: default link boot clean bootstrap etc git gh tmux vim fish ghostty claude
 
 default: link
 
-link: etc git gh tmux vim fish claude
+link: etc git gh tmux vim fish ghostty claude
 
 boot: bootstrap
 
 bootstrap:
 	@mkdir -p $(FISH)
 	@mkdir -p $(GH)
+	@mkdir -p $(GHOSTY)
 	@echo "Bootstrap completed. Run 'make link' to create symlinks."
 
 clean:
@@ -65,6 +69,9 @@ vim:
 fish:
 	@ln -sf $(FISH_ROOT)/config.fish $(FISH)/config.fish
 	@ln -sf $(FISH_ROOT)/fish_plugins $(FISH)/fish_plugins
+
+ghostty:
+	@ln -sf $(GHOSTTY_ROOT)/config $(GHOSTY)/config
 
 claude:
 	@ln -sf $(CLAUDE_ROOT)/CLAUDE.md $(HOME)/.claude/CLAUDE.md
