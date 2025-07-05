@@ -1,5 +1,6 @@
 {
   "permissions": {
+    "defaultMode": "plan",
     "allow": [
       "Bash(ls:*)",
       "Bash(git:*)",
@@ -8,5 +9,17 @@
     "deny": []
   },
   "model": "sonnet",
-  "preferredNotifChannel": "terminal_bell"
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Glass.aiff"
+          }
+        ]
+      }
+    ]
+  }
 }
