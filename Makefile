@@ -27,7 +27,8 @@ CLEAN_TARGETS := \
 	$(CONFIG)/gh/config.yml \
 	$(CONFIG)/ghostty/config \
 	$(HOME)/.claude/CLAUDE.md \
-	$(HOME)/.claude/settings.json
+	$(HOME)/.claude/settings.json \
+	$(HOME)/.claude/commands
 
 .PHONY: default link boot clean bootstrap etc git gh vim fish ghostty claude
 
@@ -41,6 +42,7 @@ bootstrap:
 	@mkdir -p $(FISH)
 	@mkdir -p $(GH)
 	@mkdir -p $(GHOSTY)
+	@mkdir -p $(HOME)/.claude/commands
 	@echo "Bootstrap completed. Run 'make link' to create symlinks."
 
 clean:
@@ -73,3 +75,4 @@ ghostty:
 claude:
 	@ln -sf $(CLAUDE_ROOT)/CLAUDE.md $(HOME)/.claude/CLAUDE.md
 	@ln -sf $(CLAUDE_ROOT)/settings.json $(HOME)/.claude/settings.json
+	@ln -sf $(CLAUDE_ROOT)/commands $(HOME)/.claude/commands
