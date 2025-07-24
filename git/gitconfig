@@ -54,3 +54,9 @@
     date = iso
 [status]
     showUntrackedFiles = all
+
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

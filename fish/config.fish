@@ -5,6 +5,19 @@ set -gx GOPATH $HOME
 set -gx VOLTA_HOME $HOME/.volta
 set -gx PATH $VOLTA_HOME/bin $PATH
 
+# rbenv
+status --is-interactive; and source (rbenv init -|psub)
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+
+# ffmpeg
+set -x PATH $HOME/src $PATH
+
+# Firebase
+# set -x FIREBASE_TOKEN your_token_here
+
+# GCloud SDK
+set -gx PATH $HOME/google-cloud-sdk/bin $PATH
+
 ## setting
 set -gx EDITOR vim
 set -gx LANG ja_JP.UTF-8
@@ -31,3 +44,11 @@ end
 function fzf
   command fzf --height 30% --reverse --border $argv
 end
+
+# Google AI Platform
+set -gx GOOGLE_GENAI_USE_VERTEXAI true
+set -gx GOOGLE_CLOUD_PROJECT mirrativ-dev
+set -gx GOOGLE_CLOUD_LOCATION global
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/to4iki/google-cloud-sdk/path.fish.inc' ]; . '/Users/to4iki/google-cloud-sdk/path.fish.inc'; end
