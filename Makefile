@@ -47,6 +47,9 @@ bootstrap:
 
 clean:
 	@rm -f $(CLEAN_TARGETS)
+	@for file in $(FISH_ROOT)/functions/*.fish; do \
+		[ -f "$$file" ] && rm -f $(FISH)/functions/$$(basename "$$file"); \
+	done
 	@echo "Cleaned dotfiles."
 
 etc:
@@ -68,6 +71,9 @@ vim:
 fish:
 	@ln -sf $(FISH_ROOT)/config.fish $(FISH)/config.fish
 	@ln -sf $(FISH_ROOT)/fish_plugins $(FISH)/fish_plugins
+	@for file in $(FISH_ROOT)/functions/*.fish; do \
+		[ -f "$$file" ] && ln -sf "$$file" $(FISH)/functions/$$(basename "$$file"); \
+	done
 
 ghostty:
 	@ln -sf $(GHOSTTY_ROOT)/config $(GHOSTY)/config
