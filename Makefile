@@ -19,7 +19,6 @@ CLEAN_TARGETS := \
 	$(HOME)/.tigrc \
 	$(HOME)/.gitconfig \
 	$(HOME)/.gitconfig-work \
-	$(HOME)/.tmux.conf \
 	$(HOME)/.vimrc \
 	$(HOME)/.ideavimrc \
 	$(CONFIG)/fish/config.fish \
@@ -34,7 +33,7 @@ CLEAN_TARGETS := \
 
 default: link
 
-link: etc git gh tmux vim fish ghostty claude
+link: etc git gh vim fish ghostty claude
 
 boot: bootstrap
 
@@ -55,7 +54,6 @@ clean:
 etc:
 	@ln -sf $(ETC_ROOT)/gemrc $(HOME)/.gemrc
 	@ln -sf $(ETC_ROOT)/tigrc $(HOME)/.tigrc
-	@ln -sf $(ETC_ROOT)/tmux.conf $(HOME)/.tmux.conf
 
 git:
 	@ln -sf $(GIT_ROOT)/gitconfig $(HOME)/.gitconfig
