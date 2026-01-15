@@ -1,3 +1,4 @@
+# https://zenn.dev/to4iki/articles/cb50c4be39889d
 function fzf_difit -d "Select FROM and TO git commits with fzf and display diff using difit"
   set -l from_commit (git log --oneline --decorate -100 --color=always | \
     fzf \

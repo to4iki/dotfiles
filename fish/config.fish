@@ -21,7 +21,7 @@ alias t 'tig'
 
 ## key binding
 function fish_user_key_bindings
-  bind \co __fzf_open --editor
+  bind \co __fzf_open
   bind \cr __fzf_reverse_isearch
   bind \c] __ghq_repository_search
   bind \cb __fzf_select_branch

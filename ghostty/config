@@ -1,3 +1,5 @@
+theme = tokyonight
+
 # Window
 macos-titlebar-style = tabs
 macos-window-shadow = false
@@ -5,9 +7,8 @@ window-width = 150
 window-height = 70
 
 # Font
-font-feature = "-calt"
-font-feature = "-dlig"
-font-feature = "-liga"
+font-size = 13
+font-feature = -dlig
 
 # Shell
 shell-integration-features = no-cursor

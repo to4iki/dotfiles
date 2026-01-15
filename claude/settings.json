@@ -1,14 +1,13 @@
 {
   "permissions": {
-    "defaultMode": "plan",
     "allow": [
       "Bash(ls:*)",
       "Bash(git:*)",
       "Bash(gh:*)"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "plan"
   },
-  "model": "sonnet",
   "hooks": {
     "Stop": [
       {
