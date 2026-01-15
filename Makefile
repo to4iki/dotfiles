@@ -5,10 +5,7 @@ FISH := $(CONFIG)/fish
 GH := $(CONFIG)/gh
 GHOSTY := $(CONFIG)/ghostty
 
-ETC_ROOT := $(CURDIR)/etc
 GH_ROOT := $(CURDIR)/gh
-GIT_ROOT := $(CURDIR)/git
-VIM_ROOT := $(CURDIR)/vim
 FISH_ROOT := $(CURDIR)/fish
 GHOSTTY_ROOT := $(CURDIR)/ghostty
 CLAUDE_ROOT := $(CURDIR)/claude
@@ -26,22 +23,16 @@ CLEAN_TARGETS := \
 	$(CONFIG)/gh/config.yml \
 	$(CONFIG)/ghostty/config \
 	$(HOME)/.claude/CLAUDE.md \
-	$(HOME)/.claude/settings.json \
-	$(HOME)/.claude/commands
+	$(HOME)/.claude/settings.json
 
-.PHONY: default link boot clean bootstrap etc git gh vim fish ghostty claude
+.PHONY: link bootstrap clean dotfiles gh fish ghostty claude
 
-default: link
-
-link: etc git gh vim fish ghostty claude
-
-boot: bootstrap
+link: dotfiles gh fish ghostty claude
 
 bootstrap:
 	@mkdir -p $(FISH)
 	@mkdir -p $(GH)
 	@mkdir -p $(GHOSTY)
-	@mkdir -p $(HOME)/.claude/commands
 	@echo "Bootstrap completed. Run 'make link' to create symlinks."
 
 clean:
@@ -51,20 +42,16 @@ clean:
 	done
 	@echo "Cleaned dotfiles."
 
-etc:
-	@ln -sf $(ETC_ROOT)/gemrc $(HOME)/.gemrc
-	@ln -sf $(ETC_ROOT)/tigrc $(HOME)/.tigrc
-
-git:
-	@ln -sf $(GIT_ROOT)/gitconfig $(HOME)/.gitconfig
-	@ln -sf $(GIT_ROOT)/gitconfig-work $(HOME)/.gitconfig-work
+dotfiles:
+	@ln -sf $(CURDIR)/gemrc $(HOME)/.gemrc
+	@ln -sf $(CURDIR)/tigrc $(HOME)/.tigrc
+	@ln -sf $(CURDIR)/gitconfig $(HOME)/.gitconfig
+	@ln -sf $(CURDIR)/gitconfig-work $(HOME)/.gitconfig-work
+	@ln -sf $(CURDIR)/vimrc $(HOME)/.vimrc
+	@ln -sf $(CURDIR)/ideavimrc $(HOME)/.ideavimrc
 
 gh:
 	@ln -sf $(GH_ROOT)/config.yml $(GH)/config.yml
-
-vim:
-	@ln -sf $(VIM_ROOT)/vimrc $(HOME)/.vimrc
-	@ln -sf $(VIM_ROOT)/ideavimrc $(HOME)/.ideavimrc
 
 fish:
 	@ln -sf $(FISH_ROOT)/config.fish $(FISH)/config.fish
@@ -79,4 +66,3 @@ ghostty:
 claude:
 	@ln -sf $(CLAUDE_ROOT)/CLAUDE.md $(HOME)/.claude/CLAUDE.md
 	@ln -sf $(CLAUDE_ROOT)/settings.json $(HOME)/.claude/settings.json
-	@ln -sf $(CLAUDE_ROOT)/commands $(HOME)/.claude/commands

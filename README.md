@@ -21,7 +21,7 @@ $ make boot
 ```
 
 ### Setup
-Just type `make` or `make link`.
+Just type `make link`.
 
 After dependent libraries install.
 - [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
