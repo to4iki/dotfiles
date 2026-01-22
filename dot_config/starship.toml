@@ -1,0 +1,27 @@
+format = """
+$directory\
+$git_branch\
+$git_status\
+$character
+"""
+
+add_newline = false
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+
+[directory]
+truncation_length = 3
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+symbol = ''
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = 'bold yellow'
+untracked = ''
+stashed = ''
+renamed = ''
+deleted = ''

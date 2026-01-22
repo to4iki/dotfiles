@@ -1,0 +1,23 @@
+theme = tokyonight
+
+# Window
+macos-titlebar-style = tabs
+macos-window-shadow = false
+window-width = 150
+window-height = 70
+
+# Font
+font-family = "SF Mono"
+font-family = "Hiragino Kaku Gothic ProN"
+font-size = 12
+font-feature = -dlig
+
+# Shell
+shell-integration-features = no-cursor
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+
+# Keybind
+keybind = shift+enter=text:\x1b\r

@@ -1,0 +1,24 @@
+# Visual
+set mouse = yes
+set main-view = id date author commit-title:graph=yes,refs=yes
+set split-view-height = 77%
+set split-view-width = 77%
+set ignore-space = all
+set ignore-case = true
+set diff-highlight = true
+set refresh-mode = auto
+set line-graphics = utf-8
+set tab-size = 2
+set commit-order = topo
+
+# Alias
+bind generic <Ctrl-f> scroll-page-down
+bind generic <Ctrl-b> scroll-page-up
+bind generic <Ctrl-g> refresh
+bind generic g move-first-line
+bind generic G move-last-line
+bind generic y @sh -c "echo %(commit) | pbcopy"
+
+bind main P !@gh openpr %(commit)
+bind blame P !@gh openpr %(commit)
+bind main R !git rebase -i %(commit)

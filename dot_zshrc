@@ -1,0 +1,39 @@
+# PATH
+source ~/.config/zsh/path.zsh
+
+# Environment
+source ~/.config/zsh/env.zsh
+export EDITOR='vim'
+export FZF_DEFAULT_OPTS='--height 30% --reverse --border'
+
+# Aliases
+alias ls='eza'
+alias l='eza -al --git --icons'
+alias v='vim'
+alias g='git'
+alias s='g s'
+alias b='g br'
+alias m='g sw master'
+alias d='g d'
+alias t='tig'
+
+# Completion
+autoload -Uz compinit && compinit
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':fzf-tab:*' fzf-flags '--height=40%'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+
+# Tool initializations
+eval "$(mise activate zsh)"
+eval "$(sheldon source)"
+eval "$(starship init zsh)"
+
+# Functions
+source ~/.config/zsh/functions.zsh
+
+# Key Bindings
+zle -N fzf_ghq
+bindkey '^]' fzf_ghq
+
+zle -N fzf_branch
+bindkey '^b' fzf_branch

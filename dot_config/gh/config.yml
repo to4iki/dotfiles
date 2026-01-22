@@ -1,0 +1,8 @@
+git_protocol: https
+editor: !!null vim
+prompt: enabled
+pager: less
+aliases:
+  o: repo view --web
+  co: pr checkout
+version: "1"

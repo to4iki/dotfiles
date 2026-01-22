@@ -1,0 +1,15 @@
+shell = "zsh"
+
+[plugins.fzf]
+github = "junegunn/fzf"
+dir = "shell"
+apply = ["source"]
+
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"

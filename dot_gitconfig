@@ -1,0 +1,72 @@
+[user]
+  name = Toshiki Takezawa
+  email = tsk.take815@gmail.com
+[github]
+  user = to4iki
+[color]
+  ui = auto
+[column]
+  ui = auto
+[core]
+  editor = vim
+  pager = less -FRX
+  whitespace = trailing-space,space-before-tab
+  autocrlf = input
+  excludesfile = ~/.config/git/ignore
+  fsmonitor = true
+  untrackedCache = true
+[alias]
+  br = branch --verbose --verbose --color --sort=-committerdate
+  undo = reset --soft HEAD~
+  cancel = !git commit -a -m 'Temporary commit for cancel' && git reset --hard HEAD~
+  sw = switch
+  d = diff --histogram
+  f = fetch
+  l = log --oneline --graph
+  n = now --all --stat
+  s = status -sb
+[pull]
+  rebase = true
+[rebase]
+  autoStash = true
+  autoSquash = true
+  updateRefs = true
+[stash]
+  showPatch = true
+[diff]
+  algorithm = histogram
+  colorMoved = default
+  mnemonicPrefix = true
+  renames = true
+[merge]
+  ff = false
+  conflictstyle = zdiff3
+[init]
+  defaultBranch = main
+[tag]
+  sort = version:refname
+[help]
+  autocorrect = prompt
+[commit]
+  verbose = true
+[rerere]
+  enabled = true
+  autoupdate = true
+[push]
+  autoSetupRemote = true
+  default = current
+  followTags = true
+[fetch]
+  prune = true
+  pruneTags = true
+[branch]
+  sort = -committerdate
+[log]
+  date = iso
+[status]
+  showUntrackedFiles = all
+[tig "bind"]
+  generic = g move-first-line
+  generic = G move-last-line
+[ghq]
+  root = ~/src

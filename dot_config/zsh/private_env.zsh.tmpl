@@ -1,0 +1,4 @@
+# Private Environment settings
+{{- if (lookPath "op") }}
+export GITHUB_PERSONAL_ACCESS_TOKEN='{{ onepasswordRead "op://Private/GitHub_PAT/token" }}'
+{{- end }}

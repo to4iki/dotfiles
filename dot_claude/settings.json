@@ -1,0 +1,11 @@
+{
+  "language": "日本語",
+  "permissions": {
+    "defaultMode": "acceptEdits"
+  },
+  "enabledPlugins": {
+    "code-simplifier@claude-plugins-official": true,
+    "github@claude-plugins-official": true
+  },
+  "plansDirectory": "./plans"
+}
