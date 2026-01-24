@@ -45,3 +45,8 @@ fzf_difit() {
 
   difit "$to_hash" "$from_hash~1"
 }
+
+# git-wt with fzf integration
+wt() {
+  git wt $(git wt | tail -n +2 | fzf | awk '{print $(NF-1)}')
+}

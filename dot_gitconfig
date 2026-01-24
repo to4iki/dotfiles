@@ -70,3 +70,5 @@
   generic = G move-last-line
 [ghq]
   root = ~/src
+[wt]
+  basedir = .worktrees

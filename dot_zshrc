@@ -27,6 +27,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 eval "$(mise activate zsh)"
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
+eval "$(git wt --init zsh)"
 
 # Functions
 source ~/.config/zsh/functions.zsh
