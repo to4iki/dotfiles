@@ -22,3 +22,6 @@ bind generic y @sh -c "echo %(commit) | pbcopy"
 bind main P !@gh openpr %(commit)
 bind blame P !@gh openpr %(commit)
 bind main R !git rebase -i %(commit)
+
+bind main D !git diff %(commit)
+bind status D !git diff -- %(file)

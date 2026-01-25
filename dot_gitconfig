@@ -20,7 +20,7 @@
   undo = reset --soft HEAD~
   cancel = !git commit -a -m 'Temporary commit for cancel' && git reset --hard HEAD~
   sw = switch
-  d = diff --histogram
+  d = diff
   f = fetch
   l = log --oneline --graph
   n = now --all --stat
@@ -34,10 +34,8 @@
 [stash]
   showPatch = true
 [diff]
-  algorithm = histogram
-  colorMoved = default
-  mnemonicPrefix = true
-  renames = true
+  tool = difftastic
+  external = difft
 [merge]
   ff = false
   conflictstyle = zdiff3
