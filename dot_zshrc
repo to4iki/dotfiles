@@ -13,7 +13,6 @@ alias v='vim'
 alias g='git'
 alias s='g s'
 alias b='g br'
-alias m='g sw master'
 alias d='g d'
 alias t='tig'
 
@@ -35,6 +34,3 @@ source ~/.config/zsh/functions.zsh
 # Key Bindings
 zle -N fzf_ghq
 bindkey '^]' fzf_ghq
-
-zle -N fzf_branch
-bindkey '^b' fzf_branch
