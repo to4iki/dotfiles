@@ -5,6 +5,7 @@ source ~/.config/zsh/path.zsh
 source ~/.config/zsh/env.zsh
 export EDITOR='vim'
 export FZF_DEFAULT_OPTS='--height 30% --reverse --border'
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 
 # Aliases
 alias ls='eza'
@@ -16,17 +17,25 @@ alias b='g br'
 alias d='g d'
 alias t='tig'
 
+# History
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt share_history
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+
 # Completion
 autoload -Uz compinit && compinit
-zstyle ':completion:*:descriptions' format '[%d]'
-zstyle ':fzf-tab:*' fzf-flags '--height=40%'
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+zstyle ':completion:*' menu select
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 
 # Tool initializations
 eval "$(mise activate zsh)"
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
 eval "$(git wt --init zsh)"
+source <(carapace _carapace)
 
 # Functions
 source ~/.config/zsh/functions.zsh
