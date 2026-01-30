@@ -4,7 +4,7 @@ source ~/.config/zsh/path.zsh
 # Environment
 source ~/.config/zsh/env.zsh
 export EDITOR='vim'
-export FZF_DEFAULT_OPTS='--height 30% --reverse --border'
+export FZF_DEFAULT_OPTS='--height 30% --border'
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 
 # Aliases
@@ -34,6 +34,7 @@ zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 eval "$(mise activate zsh)"
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 eval "$(git wt --init zsh)"
 source <(carapace _carapace)
 
