@@ -10,20 +10,18 @@ filetype plugin indent on
 syntax on
 set number
 set nowrap
-set smartindent
 set termguicolors
 set cursorline
-
-" Display special characters
 set list
 set listchars=tab:»-,trail:_,extends:>,precedes:<,nbsp:%
 set showmatch
 
-" Tab settings
-set ts=2 sw=2 sts=0
+" Tab & Indent Settings
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
-set showtabline=2
 
 " Status Line
 set laststatus=2
@@ -40,13 +38,9 @@ set incsearch
 set autoread
 set noswapfile
 set nobackup
-set visualbell t_vb=
-set modeline
-set modelines=3
 
 " Completion
 set wildmenu
-set omnifunc=syntaxcomplete#Complete
 
 " Key Mappings -------------------
 " Normal Mode
