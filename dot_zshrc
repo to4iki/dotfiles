@@ -3,14 +3,14 @@ source ~/.config/zsh/path.zsh
 
 # Environment
 source ~/.config/zsh/env.zsh
-export EDITOR='vim'
+export EDITOR='hx'
 export FZF_DEFAULT_OPTS='--height 30% --border'
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 
 # Aliases
 alias ls='eza'
 alias l='eza -al --git --icons'
-alias v='vim'
+alias h='hx'
 alias g='git'
 alias s='g s'
 alias b='g br'
