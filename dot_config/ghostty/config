@@ -1,4 +1,5 @@
 theme = tokyonight
+macos-option-as-alt = true
 
 # Window
 macos-titlebar-style = tabs
