@@ -10,5 +10,5 @@
     "github@claude-plugins-official": true
   },
   "language": "japanese",
-  "plansDirectory": "./.plans"
+  "plansDirectory": "./plans"
 }
