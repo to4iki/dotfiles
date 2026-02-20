@@ -9,7 +9,7 @@
   ui = auto
 [core]
   editor = hx
-  pager = less -FRX
+  pager = delta
   whitespace = trailing-space,space-before-tab
   autocrlf = input
   excludesfile = ~/.config/git/ignore
@@ -33,9 +33,6 @@
   updateRefs = true
 [stash]
   showPatch = true
-[diff]
-  tool = difftastic
-  external = difft
 [merge]
   ff = false
   conflictstyle = zdiff3
@@ -68,3 +65,5 @@
   generic = G move-last-line
 [ghq]
   root = ~/src
+[delta]
+  side-by-side = true
