@@ -6,6 +6,7 @@ source ~/.config/zsh/env.zsh
 export EDITOR='hx'
 export FZF_DEFAULT_OPTS='--height 30% --border'
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases
 alias ls='eza'
@@ -16,6 +17,7 @@ alias s='g s'
 alias b='g br'
 alias d='g d'
 alias t='tig'
+alias lg='lazygit'
 
 # History
 HISTFILE=$HOME/.zsh_history
