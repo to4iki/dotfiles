@@ -21,3 +21,5 @@ cursor-style-blink = false
 
 # Keybind
 keybind = shift+enter=text:\x1b\r
+keybind = alt+left=unbind
+keybind = alt+right=unbind
