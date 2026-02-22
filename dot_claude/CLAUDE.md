@@ -1,13 +1,13 @@
 # CLAUDE.md - Global Level
 
-## 開発スタイル
+## Development Style
 
-- TDDで開発する（探索 → Red → Green → Refactoring）
-- 不明瞭な指示は質問して明確にする
+- Develop with TDD (Explore → Red → Green → Refactoring)
+- Ask questions to clarify unclear instructions
 
-## コード設計
+## Code Design
 
-- 関心の分離を保つ
-- 状態とロジックを分離する
-- 可読性と保守性を重視する
-- コントラクト層（API/型）を厳密に定義し、実装層は再生成可能に保つ
+- Maintain separation of concerns
+- Separate state from logic
+- Prioritize readability and maintainability
+- Strictly define the contract layer (API/types) and keep the implementation layer regenerable
