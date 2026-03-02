@@ -1,0 +1,4 @@
+# https://github.com/yazi-rs/flavors?tab=readme-ov-file#tokyo-nightyazi
+[flavor]
+use = "tokyo-night"
+dark = "tokyo-night"

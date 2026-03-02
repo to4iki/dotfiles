@@ -17,6 +17,7 @@ alias s='g s'
 alias b='g br'
 alias d='g d'
 alias t='tig'
+alias y='yazi'
 alias lg='lazygit'
 
 # History
