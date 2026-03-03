@@ -1,0 +1,9 @@
+README.md
+Makefile
+docs/
+
+{{- if not (env "CHEZMOI_WITH_SECRETS") }}
+.config/zsh/env.zsh
+.ssh/id_ed25519.github.pub
+.ssh/id_ed25519.github
+{{- end }}

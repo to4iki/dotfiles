@@ -6,5 +6,14 @@ dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 
 ```bash
 chezmoi init https://github.com/to4iki/dotfiles.git
-chezmoi apply
+```
+
+## Usage
+
+```bash
+# Apply the file without 1Password integration.
+make apply
+
+# Apply the secret file linked with 1Password.
+make secrets-apply
 ```
