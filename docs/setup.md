@@ -1,8 +1,12 @@
 # プロジェクトセットアップ
 
+## tmux
+
+- coding agent viewer: [k1LoW/tcmux](https://github.com/k1LoW/tcmux)
+
 ## Yazi
 
-### プラグインインストール
+plugins:
 
 ```bash
 ya pkg add BennyOe/tokyo-night
