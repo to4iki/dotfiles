@@ -4,7 +4,20 @@
 
 - coding agent viewer: [k1LoW/tcmux](https://github.com/k1LoW/tcmux)
 
+## gh
+
+```bash
+gh extension install to4iki/gh-openpr
+```
+
 ## Yazi
+
+depend:
+
+- jq
+- fd
+- rg(ripgrep)
+- fzf
 
 plugins:
 

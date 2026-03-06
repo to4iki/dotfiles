@@ -19,7 +19,7 @@ format = '[$symbol$branch(:$remote_branch)]($style) '
 symbol = ''
 
 [git_status]
-format = '([$all_status$ahead_behind]($style) )'
+format = '([$all_status]($style) )'
 style = 'bold yellow'
 untracked = ''
 stashed = ''

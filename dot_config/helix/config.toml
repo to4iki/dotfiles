@@ -24,6 +24,7 @@ C-e = "goto_line_end_newline"
 Cmd-c = "yank_to_clipboard"
 
 [keys.normal]
+X = ["extend_line_up", "extend_to_line_bounds"]
 # Using `yazi` within Helix
 # https://github.com/helix-editor/helix/discussions/12934
 C-y = [

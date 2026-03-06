@@ -4,6 +4,7 @@ source ~/.config/zsh/path.zsh
 # Environment
 source ~/.config/zsh/env.zsh
 export EDITOR='hx'
+export FZF_DEFAULT_COMMAND='fd --type f --type d --hidden --exclude .git'
 export FZF_DEFAULT_OPTS='--height 30% --border'
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -33,12 +34,13 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 
 # Tool initializations
+source <(carapace _carapace)
+source <(fzf --zsh)
 eval "$(mise activate zsh)"
-eval "$(sheldon source)"
-eval "$(starship init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 eval "$(git wt --init zsh)"
-source <(carapace _carapace)
+eval "$(sheldon source)"
+eval "$(starship init zsh)"
 
 # Functions
 source ~/.config/zsh/functions.zsh
