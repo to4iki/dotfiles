@@ -1,5 +1,8 @@
 theme = "tokyonight"
 
+[editor]
+bufferline = "multiple"
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
@@ -10,6 +13,9 @@ hidden = false
 
 [editor.indent-guides]
 render = true
+
+[editor.lsp]
+display-inlay-hints = true
 
 [keys.insert]
 j = { j = "normal_mode" }
@@ -27,3 +33,8 @@ C-y = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
+
+[keys.normal.space]
+w = ":write"
+x = ":buffer-close"
+i = { h = ":toggle lsp.display-inlay-hints" }
