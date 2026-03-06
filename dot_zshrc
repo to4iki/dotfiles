@@ -4,6 +4,7 @@ source ~/.config/zsh/path.zsh
 # Environment
 source ~/.config/zsh/env.zsh
 export EDITOR='hx'
+export FZF_DEFAULT_COMMAND='fd --type f --type d --hidden --exclude .git'
 export FZF_DEFAULT_OPTS='--height 30% --border'
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 export XDG_CONFIG_HOME="$HOME/.config"

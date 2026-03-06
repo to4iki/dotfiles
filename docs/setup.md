@@ -6,6 +6,13 @@
 
 ## Yazi
 
+depend:
+
+- jq
+- fd
+- rg(ripgrep)
+- fzf
+
 plugins:
 
 ```bash
