@@ -6,16 +6,17 @@ source ~/.config/zsh/env.zsh
 export EDITOR='hx'
 export FZF_DEFAULT_COMMAND='fd --type f --type d --hidden --exclude .git'
 export FZF_DEFAULT_OPTS='--height 30% --border'
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases
 alias ls='eza'
 alias l='eza -al --git --icons'
+alias b='bat'
 alias h='hx'
 alias g='git'
 alias s='g s'
-alias b='g br'
 alias d='g d'
 alias y='yazi'
 alias lg='lazygit'
@@ -48,3 +49,5 @@ source ~/.config/zsh/functions.zsh
 # Key Bindings
 zle -N fzf_ghq
 bindkey '^]' fzf_ghq
+bindkey '^G' fzf-file-widget
+bindkey -r '^T'
