@@ -1,4 +1,12 @@
 # 使用ツール
 
-- Markdown viewer: [k1LoW/mo](https://github.com/k1LoW/mo)
+## Markdown
+
+ビューワーに [k1LoW/mo](https://github.com/k1LoW/mo) を利用する。
+
+
+```bash
+mo .claude/**/*md --target claude
+mo --watch '**/*.md'
+```
 
