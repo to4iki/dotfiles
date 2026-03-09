@@ -2,7 +2,7 @@
 
 ## tmux
 
-- coding agent viewer: [k1LoW/tcmux](https://github.com/k1LoW/tcmux)
+AIコーディングエージェントの状態確認用に [k1LoW/tcmux](https://github.com/k1LoW/tcmux) を利用する。
 
 ## gh
 
@@ -12,7 +12,7 @@ gh extension install to4iki/gh-openpr
 
 ## Yazi
 
-depend:
+dependency:
 
 - jq
 - fd
