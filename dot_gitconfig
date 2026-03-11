@@ -16,15 +16,8 @@
   fsmonitor = true
   untrackedCache = true
 [alias]
-  br = branch --verbose --verbose --color --sort=-committerdate
   undo = reset --soft HEAD~
   cancel = !git commit -a -m 'Temporary commit for cancel' && git reset --hard HEAD~
-  sw = switch
-  d = diff
-  f = fetch
-  l = log --oneline --graph
-  n = now --all --stat
-  s = status -sb
 [pull]
   rebase = true
 [rebase]

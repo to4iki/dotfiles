@@ -11,15 +11,8 @@ export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases
-alias ls='eza'
-alias l='eza -al --git --icons'
-alias b='bat'
-alias h='hx'
-alias g='git'
-alias s='g s'
-alias d='g d'
-alias y='yazi'
-alias lg='lazygit'
+alias cat='bat'
+alias ls='eza --icons'
 
 # History
 HISTFILE=$HOME/.zsh_history
