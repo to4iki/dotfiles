@@ -21,13 +21,14 @@
       "Bash(git add -A:*)",
       "Bash(git add --all:*)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   },
   "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true,
     "github@claude-plugins-official": true,
     "git-workflow@to4iki-claude-code-plugins": true
   },
   "language": "japanese",
-  "plansDirectory": "./plans"
+  "plansDirectory": "./plans",
+  "skipAutoPermissionPrompt": true,
+  "skipDangerousModePermissionPrompt": true
 }
