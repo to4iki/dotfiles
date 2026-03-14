@@ -1,3 +1,4 @@
 [tools]
+"github:ushironoko/octorus" = "latest"
 node = "latest"
 rust = "latest"
