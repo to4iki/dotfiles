@@ -5,15 +5,18 @@
   },
   "permissions": {
     "allow": [
-      "Read(**)",
-      "Bash(ls:*)",
-      "Bash(mkdir:*)",
-      "Bash(git commit:*)",
-      "Bash(git diff:*)",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Read",
+      "WebFetch",
+      "WebSearch",
+      "Bash(grep:*)",
+      "Bash(find:*)",
       "Bash(git log:*)",
       "Bash(git status:*)",
-      "WebFetch",
-      "WebSearch"
+      "Bash(git diff:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [
       "Bash(sudo:*)",
