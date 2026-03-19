@@ -16,7 +16,8 @@
       "Bash(git log:*)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(gh pr:*)"
     ],
     "deny": [
       "Bash(sudo:*)",
@@ -27,7 +28,6 @@
     "defaultMode": "auto"
   },
   "enabledPlugins": {
-    "github@claude-plugins-official": true,
     "git-workflow@to4iki-claude-code-plugins": true
   },
   "language": "japanese",
