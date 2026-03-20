@@ -30,6 +30,10 @@
   "enabledPlugins": {
     "git-workflow@to4iki-claude-code-plugins": true
   },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.py"
+  },
   "language": "japanese",
   "plansDirectory": "./plans",
   "skipAutoPermissionPrompt": true,
