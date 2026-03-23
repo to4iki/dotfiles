@@ -1,5 +1,8 @@
-**/.claude/settings.local.json
+# macOS
 .local/**
 .DS_Store
+
+# AI
+**/.claude/settings.local.json
+**/.claude/worktrees/
 plans/
-reviews/
