@@ -1,4 +1,5 @@
 [tools]
+bun = "latest"
 "github:ushironoko/octorus" = "latest"
 node = "latest"
 rust = "latest"

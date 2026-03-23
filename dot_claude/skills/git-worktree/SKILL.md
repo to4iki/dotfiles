@@ -4,7 +4,6 @@ description: >
   git-wt コマンドで Git worktree を作成し、作業ディレクトリを分離して実装を行う。
   作業完了後はユーザー確認を経て worktree を削除する。
   ユーザーが「worktree」「ワークツリー」「ブランチを分けて」「wt で」など明示的に指定した場合にのみ起動する。
-user-invocable: true
 ---
 
 # Git Worktree
