@@ -1,5 +1,5 @@
 ---
-name: git-worktree
+name: git-wt
 description: >
   git-wt コマンドで Git worktree を作成し、作業ディレクトリを分離して実装を行う。
   作業完了後はユーザー確認を経て worktree を削除する。
@@ -38,15 +38,30 @@ git wt <branch-name> --nocd
 - worktree パス
 - マージ方法（例: `cd $WORKTREE_PATH && git push -u origin <branch-name>` → PR作成）
 
-### Step 4: ユーザー確認後に削除
+### Step 4: クリーンアップ
 
-ユーザーの確認を得てから削除する。自動削除はしない。
+`claude -w` の公式挙動に合わせ、変更の有無でクリーンアップを分岐する。
+
+#### 変更なし（未コミット・未変更）の場合
+
+worktree とブランチを自動削除する。ユーザー確認は不要。
 
 ```bash
-# 安全な削除
+git wt -d <branch-name>
+```
+
+#### 変更またはコミットがある場合
+
+ユーザーに「保持」か「削除」かを確認する。
+
+- **保持**: worktree とブランチをそのまま残す。後で `cd $WORKTREE_PATH` で戻れることを伝える。
+- **削除**: 未コミットの変更とコミットがすべて破棄されることを警告した上で削除する。
+
+```bash
+# 通常削除（マージ済みブランチ）
 git wt -d <branch-name>
 
-# 強制削除（ユーザーが明示的に指示した場合のみ）
+# 強制削除（未マージの変更がある場合、ユーザーが明示的に指示した場合のみ）
 git wt -D <branch-name>
 ```
 
