@@ -1,7 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "env": {
-    "ENABLE_TOOL_SEARCH": "true"
+    "ENABLE_TOOL_SEARCH": "true",
+    "CLAUDE_CODE_NO_FLICKER": "1"
   },
   "permissions": {
     "allow": [
@@ -21,21 +22,34 @@
     ],
     "deny": [
       "Bash(sudo:*)",
-      "Bash(git add .:*)",
-      "Bash(git add -A:*)",
-      "Bash(git add --all:*)"
+      "Read(.env.*)",
+      "Read(id_ed25519)"
     ],
     "defaultMode": "auto"
   },
-  "enabledPlugins": {
-    "git-workflow@to4iki-claude-code-plugins": true
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "ExitPlanMode",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "newest=$(ls -t ./plans/*.md 2>/dev/null | head -1); [ -n \"$newest\" ] && mo \"$newest\" || true",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
   },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.py"
   },
+  "enabledPlugins": {
+    "git-workflow@to4iki-claude-code-plugins": true
+  },
   "language": "japanese",
   "plansDirectory": "./plans",
-  "skipAutoPermissionPrompt": true,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true
 }
