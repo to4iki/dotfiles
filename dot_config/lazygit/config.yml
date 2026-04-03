@@ -2,3 +2,8 @@
 git:
   pagers:
     - pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+customCommands:
+  - command: czg ai
+    context: files
+    key: C
+    output: terminal
