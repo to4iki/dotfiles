@@ -25,7 +25,7 @@ op valut list
 ```bash
 op item create \
   --category=Login \
-  --title="GitHub SSH" \
+  --title="GitHub_SSH" \
   --vault="Private" \
   "private_key[password]=$(cat ~/.ssh/id_ed25519.github)" \
   "public_key[text]=$(cat ~/.ssh/id_ed25519.github.pub)"
