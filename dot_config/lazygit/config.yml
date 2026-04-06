@@ -1,7 +1,10 @@
-# https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
 git:
+  branchLogCmd: git log --graph --color=always --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' {{branchName}} --
   pagers:
+    # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
     - pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  allBranchesLogCmds:
+    - git log --graph --color=always --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
 customCommands:
   - command: czg ai
     context: files
