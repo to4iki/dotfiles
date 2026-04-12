@@ -49,6 +49,8 @@
     "git-workflow@to4iki-claude-code-plugins": true
   },
   "language": "japanese",
+  "effortLevel": "high",
+  "advisorModel": "opus",
   "plansDirectory": "./plans",
   "skipDangerousModePermissionPrompt": true,
   "skipAutoPermissionPrompt": true
