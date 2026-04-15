@@ -8,6 +8,7 @@ AIコーディングエージェントの状態確認用に [k1LoW/tcmux](https:
 
 ```bash
 gh extension install to4iki/gh-openpr
+gh extension install babarot/gh-infra
 ```
 
 ## Yazi
