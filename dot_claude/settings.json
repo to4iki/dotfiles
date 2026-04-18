@@ -45,9 +45,6 @@
     "type": "command",
     "command": "~/.claude/statusline.py"
   },
-  "enabledPlugins": {
-    "git-workflow@to4iki-claude-code-plugins": true
-  },
   "language": "japanese",
   "effortLevel": "high",
   "advisorModel": "opus",
