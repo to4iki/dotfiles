@@ -14,11 +14,11 @@
       "WebSearch",
       "Bash(grep:*)",
       "Bash(find:*)",
+      "Bash(gh:*)",
       "Bash(git log:*)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
-      "Bash(git commit:*)",
-      "Bash(gh pr:*)"
+      "Bash(git commit:*)"
     ],
     "deny": [
       "Bash(sudo:*)",
