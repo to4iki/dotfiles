@@ -11,6 +11,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases
 alias cat='bat'
+alias less='bat'
 alias find='fd'
 alias grep='rg'
 alias ls='eza --icons'

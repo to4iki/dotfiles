@@ -46,7 +46,6 @@
     "command": "~/.claude/statusline.py"
   },
   "language": "japanese",
-  "effortLevel": "high",
   "advisorModel": "opus",
   "plansDirectory": "./plans",
   "skipDangerousModePermissionPrompt": true,
