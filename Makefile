@@ -15,6 +15,7 @@ setup-gh-extensions:
 	gh extension install babarot/gh-infra
 
 setup-gh-skills:
+	gh skill install to4iki/skills git-wt --agent $(AGENT) --scope user
 	gh skill install vercel-labs/opensrc opensrc --agent $(AGENT) --scope user
 
 setup-yazi-packages:
@@ -27,4 +28,5 @@ setup-npm:
 	npm install -g opensrc
 
 update-gh-skills:
+	gh skill update to4iki/skills git-wt
 	gh skill update vercel-labs/opensrc opensrc
