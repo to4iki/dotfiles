@@ -1,14 +1,14 @@
-# ghq with fzf integration
-fzf_ghq() {
-  local selected=$(ghq list | fzf --query "$LBUFFER")
+# Navigate to project roots within ghq-managed repositories
+ghq_roots() {
+  local selected=$(ghq list --full-path | roots | fzf --query "$LBUFFER")
   if [ -n "$selected" ]; then
-    BUFFER="cd $(ghq root)/$selected"
+    BUFFER="cd $selected"
     zle accept-line
   fi
   zle reset-prompt
 }
 
-# git-wt with fzf integration
+# Navigate to git worktrees
 wt() {
   git wt $(git wt | tail -n +2 | fzf | awk '{print $(NF-1)}')
 }
