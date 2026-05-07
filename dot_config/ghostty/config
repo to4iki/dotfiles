@@ -9,8 +9,9 @@ window-height = 70
 
 # Font
 font-family = "SF Mono"
-font-family = "Hiragino Kaku Gothic ProN"
+font-family = "Hiragino Sans"
 font-size = 12
+font-thicken = true
 
 # Shell
 shell-integration-features = no-cursor
