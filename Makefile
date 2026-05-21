@@ -16,6 +16,7 @@ setup-gh-extensions:
 
 setup-gh-skills:
 	gh skill install to4iki/skills git-wt --agent $(AGENT) --scope user
+	gh skill install to4iki/skills implementation-notes --agent $(AGENT) --scope user
 	gh skill install vercel-labs/opensrc opensrc --agent $(AGENT) --scope user
 
 setup-yazi-packages:
