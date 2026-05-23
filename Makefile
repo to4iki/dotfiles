@@ -2,30 +2,21 @@ AGENT ?= claude-code
 
 default: apply
 
-setup: setup-gh-extensions setup-gh-skills setup-yazi-packages setup-npm
-
 apply:
 	chezmoi apply -v
 
 secrets-apply:
 	CHEZMOI_WITH_SECRETS=1 chezmoi apply -v
 
-setup-gh-extensions:
+install-gh-extensions:
 	gh extension install to4iki/gh-openpr
 	gh extension install babarot/gh-infra
 
-setup-gh-skills:
+install-gh-skills:
 	gh skill install to4iki/skills git-wt --agent $(AGENT) --scope user
 	gh skill install to4iki/skills implementation-notes --agent $(AGENT) --scope user
 
-setup-yazi-packages:
+install-yazi-packages:
 	ya pkg add BennyOe/tokyo-night
 	ya pkg add yazi-rs/plugins:smart-enter
 	ya pkg add yazi-rs/plugins:git
-
-setup-npm:
-	npm install -g czg
-
-update-gh-skills:
-	gh skill update to4iki/skills git-wt
-	gh skill update vercel-labs/opensrc opensrc
