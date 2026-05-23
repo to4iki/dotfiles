@@ -1,0 +1,10 @@
+name: to4iki-dotfiles
+version: 1.0.0
+targets:
+  - claude
+dependencies:
+  apm:
+    - to4iki/skills/git-wt#f6cfb5a35bde48a6b6b20054d94db15ca0c131ec
+    - to4iki/skills/implementation-notes#f6cfb5a35bde48a6b6b20054d94db15ca0c131ec
+  mcp: []
+scripts: {}
