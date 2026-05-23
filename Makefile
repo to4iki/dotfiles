@@ -17,7 +17,6 @@ setup-gh-extensions:
 setup-gh-skills:
 	gh skill install to4iki/skills git-wt --agent $(AGENT) --scope user
 	gh skill install to4iki/skills implementation-notes --agent $(AGENT) --scope user
-	gh skill install vercel-labs/opensrc opensrc --agent $(AGENT) --scope user
 
 setup-yazi-packages:
 	ya pkg add BennyOe/tokyo-night
@@ -26,7 +25,6 @@ setup-yazi-packages:
 
 setup-npm:
 	npm install -g czg
-	npm install -g opensrc
 
 update-gh-skills:
 	gh skill update to4iki/skills git-wt
