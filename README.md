@@ -27,13 +27,13 @@ Bump a pinned ref in `dot_apm/apm.yml`, then:
 
 ```sh
 chezmoi apply
-apm update -g --yes
+cd ~/.apm && apm update --yes
 ```
 
 Or refresh to the latest matching refs without editing `apm.yml` first:
 
 ```sh
-apm update -g --yes
+cd ~/.apm && apm update --yes
 ```
 
 `apm.lock.yaml` under `~/.apm/` stays local; bump `#commit` in `apm.yml` when you want that version recorded in git.
