@@ -27,20 +27,6 @@
     ],
     "defaultMode": "auto"
   },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "ExitPlanMode",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "newest=$(ls -t ./plans/*.md 2>/dev/null | head -1); [ -n \"$newest\" ] && mo \"$newest\" || true",
-            "timeout": 5
-          }
-        ]
-      }
-    ]
-  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.py"
