@@ -1,11 +1,12 @@
-name: to4iki-dotfiles
+name: dotfiles
 version: 1.0.0
 targets:
   - claude
 dependencies:
   apm:
-    - to4iki/skills/git-wt#71de1730d9f33069ef142dc493a8665fc8c33e3a
-    - to4iki/skills/implementation-notes#71de1730d9f33069ef142dc493a8665fc8c33e3a
+    - to4iki/skills/git-wt#f37db59dac9b9e172317799eca6e881e0e6b80a4
+    - to4iki/skills/implementation-notes#f37db59dac9b9e172317799eca6e881e0e6b80a4
     - mattpocock/skills/skills/productivity/grill-me#b8be62ffacb0118fa3eaa29a0923c87c8c11985c
+    - mattpocock/skills/skills/engineering/grill-with-docs#e7df78bb81da39c537be810e622d2b90bbdc7dc5
   mcp: []
 scripts: {}
