@@ -10,7 +10,7 @@
 1 Password アプリを開き、設定 → 開発者 →「1Password CLI と連携」にチェック
 
 ```bash
-op valut list
+op vault list
 ```
 
 ## シークレットの追加

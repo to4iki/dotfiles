@@ -3,7 +3,7 @@
 ## 復元
 
 ```bash
-brew bundle --global
+brew bundle
 ```
 
 ## Brewfileの更新
