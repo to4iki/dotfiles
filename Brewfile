@@ -1,6 +1,6 @@
 tap "beeftornado/rmtree"
-tap "k1low/tap"
-tap "microsoft/apm"
+tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap", trusted: true
+tap "microsoft/apm", trusted: true
 brew "atuin"
 brew "bat"
 brew "carapace"
@@ -27,6 +27,7 @@ brew "k1low/tap/tcmux"
 brew "microsoft/apm/apm"
 cask "1password-cli"
 cask "codex"
+vscode "anysphere.remote-containers"
 vscode "anysphere.remote-ssh"
 vscode "github.vscode-github-actions"
 vscode "github.vscode-pull-request-github"

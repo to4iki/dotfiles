@@ -11,8 +11,8 @@ brew bundle
 インストール・アンインストールを行ったら必ず [Brewfile](../Brewfile) を更新すること。
 
 ```bash
-# brew bundle dump --file="$(chezmoi source-path)/Brewfile" --force
-brew bundle dump --force
+# brew bundle dump --file="$(chezmoi source-path)/Brewfile" --force --no-describe
+brew bundle dump --force --no-describe
 ```
 
 ## 依存削除
