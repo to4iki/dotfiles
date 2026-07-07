@@ -1,4 +1,5 @@
-tap "beeftornado/rmtree"
+tap "beeftornado/rmtree", trusted: true
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
 tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap", trusted: true
 tap "microsoft/apm", trusted: true
 tap "nikitabobko/tap", trusted: true
@@ -21,13 +22,14 @@ brew "sheldon"
 brew "starship"
 brew "tmux"
 brew "yazi"
+brew "felixkratz/formulae/borders"
 brew "k1low/tap/git-wt"
 brew "k1low/tap/mo"
 brew "k1low/tap/roots"
 brew "k1low/tap/tcmux"
 brew "microsoft/apm/apm"
 cask "1password-cli"
-cask "nikitabobko/tap/aerospace", trusted: true
+cask "nikitabobko/tap/aerospace"
 cask "codex"
 vscode "anysphere.remote-containers"
 vscode "anysphere.remote-ssh"
