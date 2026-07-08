@@ -4,6 +4,9 @@
 
 # AI
 **/.claude/settings.local.json
-**/.claude/worktrees/
 /plans/
 implementation-notes.html
+
+# Git Worktree
+**/.wt/
+**/.claude/worktrees/
