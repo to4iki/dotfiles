@@ -3,38 +3,99 @@
   "env": {
     "CLAUDE_CODE_NO_FLICKER": "1"
   },
-  "permissions": {
-    "allow": [
-      "Edit",
-      "Glob",
-      "Grep",
-      "Read",
-      "WebFetch",
-      "WebSearch",
-      "Bash(grep:*)",
-      "Bash(find:*)",
-      "Bash(gh:*)",
-      "Bash(git log:*)",
-      "Bash(git status:*)",
-      "Bash(git diff:*)",
-      "Bash(git commit:*)"
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "timeout": 10
+          }
+        ]
+      }
     ],
-    "deny": [
-      "Bash(sudo:*)",
-      "Read(.env.*)",
-      "Read(id_ed25519)"
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "timeout": 10
+          }
+        ]
+      }
     ],
-    "defaultMode": "auto"
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
   },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.py"
   },
   "language": "japanese",
-  "advisorModel": "opus",
+  "advisorModel": "fable",
   "plansDirectory": "./plans",
   "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
+  "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "remoteControlAtStartup": true
+  "skipAutoPermissionPrompt": true
 }
