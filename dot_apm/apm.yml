@@ -6,7 +6,6 @@ dependencies:
   apm:
     - to4iki/skills/git-wt#b8ef12c36609c1d6b0a895e45be2ef1de3ab9429
     - to4iki/skills/implementation-notes#b8ef12c36609c1d6b0a895e45be2ef1de3ab9429
-    - mattpocock/skills/skills/productivity/grill-me#b8be62ffacb0118fa3eaa29a0923c87c8c11985c
-    - mattpocock/skills/skills/engineering/grill-with-docs#e7df78bb81da39c537be810e622d2b90bbdc7dc5
+    - mattpocock/skills/skills/productivity/grill-me#cbf6db4233c7e4202abaf79643f7ab395c75a2df
   mcp: []
 scripts: {}
