@@ -3,10 +3,12 @@
 .DS_Store
 
 # AI
-**/.claude/settings.local.json
-/plans/
+plans/
 implementation-notes.html
 
+# Claude
+.claude/*.local.*
+
 # Git Worktree
-**/.wt/
-**/.claude/worktrees/
+.wt/
+.claude/worktrees/
