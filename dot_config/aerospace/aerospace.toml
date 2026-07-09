@@ -117,6 +117,11 @@ gaps.outer.right =      4
     alt-shift-semicolon = 'mode service'
     alt-enter = 'fullscreen'
 
+    # Open a new Chrome window from any workspace
+    # Use AppleScript instead of open -na to avoid the profile picker
+    alt-shift-c = '''exec-and-forget osascript -e 'tell application "Google Chrome" to make new window'
+    '''
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
