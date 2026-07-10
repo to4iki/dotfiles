@@ -1,0 +1,40 @@
+[keys]
+prefix = "ctrl+t"
+
+# pane
+last_pane = "prefix+o"
+
+# workspace
+previous_workspace = "prefix+up"
+next_workspace = "prefix+down"
+switch_workspace = "prefix+shift+1..9"
+
+# agent
+previous_agent = "prefix+,"
+next_agent = "prefix+."
+
+[[keys.command]]
+key = "prefix+ctrl+g"
+type = "pane"
+command = "lazygit"
+
+[[keys.command]]
+key = "prefix+ctrl+h"
+type = "pane"
+command = "hx ."
+
+[ui]
+confirm_close = false
+hide_tab_bar_when_single_tab = true
+prompt_new_tab_name = false
+pane_gaps = false
+show_agent_labels_on_pane_borders = true
+
+[ui.toast]
+delivery = "system"
+
+[ui.sound]
+enabled = false
+
+[experimental]
+switch_ascii_input_source_in_prefix = false
