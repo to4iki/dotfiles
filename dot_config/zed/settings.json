@@ -1,0 +1,54 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  // Keymap & modes
+  "base_keymap": "VSCode",
+  "helix_mode": true,
+
+  // AI
+  "disable_ai": true,
+
+  // App / session
+  "cli_default_open_behavior": "existing_window",
+  "session": {
+    "trust_all_worktrees": true
+  },
+
+  // Typography
+  "ui_font_size": 16,
+  "buffer_font_family": "SF Mono",
+  "buffer_font_fallbacks": [
+    "Hiragino Sans",
+    "monospace"
+  ],
+  "buffer_font_size": 12.0,
+
+  // Editor
+  "tab_size": 2,
+  "show_whitespaces": "all",
+  "ensure_final_newline_on_save": true,
+
+  // UI
+  "preview_tabs": {
+    "enabled": false
+  },
+  "minimap": {
+    "show": "never"
+  },
+
+  // Integrations
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "terminal": {
+    "font_size": 10.0
+  }
+}
