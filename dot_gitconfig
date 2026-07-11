@@ -57,5 +57,6 @@
   root = ~/src
 [delta]
   side-by-side = true
+  syntax-theme = Catppuccin Mocha
 [wt]
   nocd = create

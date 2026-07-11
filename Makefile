@@ -11,6 +11,6 @@ install-gh-extensions:
 	gh extension install babarot/gh-infra
 
 install-yazi-packages:
-	ya pkg add BennyOe/tokyo-night
+	ya pkg add yazi-rs/flavors:catppuccin-mocha
 	ya pkg add yazi-rs/plugins:smart-enter
 	ya pkg add yazi-rs/plugins:git
