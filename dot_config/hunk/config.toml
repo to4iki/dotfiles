@@ -1,0 +1,3 @@
+theme = "catppuccin-mocha"
+menu_bar = false
+agent_notes = true
