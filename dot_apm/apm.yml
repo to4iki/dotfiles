@@ -4,8 +4,7 @@ targets:
   - claude
 dependencies:
   apm:
-    - to4iki/skills/git-wt#b8ef12c36609c1d6b0a895e45be2ef1de3ab9429
-    - to4iki/skills/implementation-notes#b8ef12c36609c1d6b0a895e45be2ef1de3ab9429
+    - to4iki/skills/git-wt#fe1a47672e03036bcb0226236a9dc82c9acbc2a0
     - mattpocock/skills/skills/productivity/grill-me#cbf6db4233c7e4202abaf79643f7ab395c75a2df
   mcp: []
 scripts: {}
