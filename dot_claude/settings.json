@@ -9,7 +9,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
             "timeout": 10
           }
         ]
@@ -20,7 +20,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
             "timeout": 10
           }
         ]
@@ -31,7 +31,40 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "TeammateIdle": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
             "timeout": 10
           }
         ]
@@ -43,7 +76,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
             "timeout": 10
           }
         ]
@@ -55,7 +88,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
             "timeout": 10
           }
         ]
@@ -67,7 +100,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
             "timeout": 10
           }
         ]
@@ -79,7 +112,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; fi",
+            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
             "timeout": 10
           }
         ]
