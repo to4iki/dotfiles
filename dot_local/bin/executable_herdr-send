@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+# Send @path[#Lstart[-end]] to the first coding agent in the current herdr tab.
+#
+# Usage:
+#   herdr-send <file> [start_line] [end_line]
+#
+# Helix (redirect so `:sh` does not open an output popup):
+#   :sh herdr-send '%{buffer_name}' >/dev/null
+#   :sh herdr-send '%{buffer_name}' %{selection_line_start} %{selection_line_end} >/dev/null
+set -euo pipefail
+
+die() {
+  echo "herdr-send: $*" >&2
+  exit 1
+}
+
+if [[ $# -lt 1 || $# -gt 3 ]]; then
+  echo "usage: herdr-send <file> [start_line] [end_line]" >&2
+  exit 2
+fi
+
+file=$1
+start_line=${2:-}
+end_line=${3:-$start_line}
+
+if [[ "${HERDR_ENV:-}" != "1" ]]; then
+  die "not running inside a herdr pane (HERDR_ENV != 1)"
+fi
+
+tab_id=${HERDR_TAB_ID:-}
+if [[ -z "$tab_id" ]]; then
+  die "HERDR_TAB_ID is not set"
+fi
+self_pane=${HERDR_PANE_ID:-}
+
+if [[ ! -e "$file" ]]; then
+  die "file not found: $file"
+fi
+
+abs_file=$(cd "$(dirname "$file")" && pwd)/$(basename "$file")
+
+# Resolve the first coding agent in this tab that is not ourselves.
+list_json=$(herdr agent list)
+target_json=$(
+  TAB_ID="$tab_id" SELF_PANE="$self_pane" jq -c '
+    [.result.agents[]
+      | select(
+          .tab_id == env.TAB_ID
+          and .pane_id != env.SELF_PANE
+          and .agent != null
+        )]
+    | .[0] // empty
+  ' <<<"$list_json"
+)
+
+if [[ -z "$target_json" ]]; then
+  die "no coding agent found in the current tab"
+fi
+
+pane_id=$(jq -r '.pane_id' <<<"$target_json")
+agent_cwd=$(jq -r '.cwd // empty' <<<"$target_json")
+
+# Prefer a path relative to the agent's cwd when the file lives under it.
+rel_file=$abs_file
+if [[ -n "$agent_cwd" ]]; then
+  prefix=${agent_cwd%/}/
+  if [[ "$abs_file" == "$prefix"* ]]; then
+    rel_file=${abs_file#"$prefix"}
+  fi
+fi
+
+# Build @path or @path#L10 / @path#L10-22
+payload="@${rel_file}"
+if [[ -n "$start_line" ]]; then
+  if (( start_line > end_line )); then
+    tmp=$start_line
+    start_line=$end_line
+    end_line=$tmp
+  fi
+  payload+="#L${start_line}"
+  if (( end_line != start_line )); then
+    payload+="-${end_line}"
+  fi
+fi
+
+# Trailing LF puts the path on its own line without submitting (not Enter).
+herdr agent send "$pane_id" "${payload}"$'\n'

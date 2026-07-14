@@ -48,3 +48,12 @@ C-y = [
 w = ":write"
 x = ":buffer-close"
 i = { h = ":toggle lsp.display-inlay-hints" }
+
+# herdr: send path / selection to the first coding agent in this tab
+# Inspired by folke/sidekick.nvim: https://github.com/folke/sidekick.nvim
+[keys.normal.space.z]
+f = ":sh $HOME/.local/bin/herdr-send '%{buffer_name}' >/dev/null"
+l = [
+  "extend_to_line_bounds",
+  ":sh $HOME/.local/bin/herdr-send '%{buffer_name}' %{selection_line_start} %{selection_line_end} >/dev/null",
+]
