@@ -26,6 +26,11 @@ key = "prefix+ctrl+h"
 type = "pane"
 command = "hx ."
 
+[[keys.command]]
+key = "prefix+ctrl+d"
+type = "pane"
+command = "hunk diff"
+
 [ui]
 confirm_close = false
 hide_tab_bar_when_single_tab = true
