@@ -31,6 +31,11 @@ key = "prefix+ctrl+d"
 type = "pane"
 command = "hunk diff"
 
+[[keys.command]]
+key = "prefix+u"
+type = "shell"
+command = "$HOME/.local/bin/herdr-unread"
+
 [ui]
 confirm_close = false
 hide_tab_bar_when_single_tab = true
