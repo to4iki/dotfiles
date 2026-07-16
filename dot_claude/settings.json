@@ -1,134 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "advisorModel": "fable",
+  "agentPushNotifEnabled": true,
   "env": {
     "CLAUDE_CODE_NO_FLICKER": "1"
   },
   "hooks": {
-    "UserPromptSubmit": [
+    "SessionStart": [
       {
         "hooks": [
           {
-            "type": "command",
-            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
-            "timeout": 10
+            "command": "bash '/Users/to4iki/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10,
+            "type": "command"
           }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "StopFailure": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "SubagentStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "TeammateIdle": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "PostToolUseFailure": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "PermissionRequest": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/to4iki/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/to4iki/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
+        ],
+        "matcher": "*"
       }
     ]
   },
-  "statusLine": {
-    "type": "command",
-    "command": "~/.claude/statusline.py"
-  },
   "language": "japanese",
-  "advisorModel": "fable",
   "plansDirectory": "./plans",
-  "skipDangerousModePermissionPrompt": true,
-  "theme": "dark",
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "skipDangerousModePermissionPrompt": true,
+  "statusLine": {
+    "command": "~/.claude/statusline.py",
+    "type": "command"
+  },
+  "theme": "dark"
 }
