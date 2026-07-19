@@ -1,4 +1,5 @@
 tap "beeftornado/rmtree", trusted: true
+tap "dimentium/autoraise", trusted: true
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
 tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap", trusted: true
 tap "microsoft/apm", trusted: true
@@ -30,7 +31,7 @@ brew "k1low/tap/roots"
 brew "microsoft/apm/apm"
 cask "1password-cli"
 cask "nikitabobko/tap/aerospace"
-cask "codex"
+cask "dimentium/autoraise/autoraiseapp"
 vscode "anysphere.remote-containers"
 vscode "anysphere.remote-ssh"
 vscode "github.vscode-github-actions"

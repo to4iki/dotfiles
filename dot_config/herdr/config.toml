@@ -27,11 +27,6 @@ type = "pane"
 command = "hx ."
 
 [[keys.command]]
-key = "prefix+ctrl+d"
-type = "pane"
-command = "hunk diff"
-
-[[keys.command]]
 key = "prefix+u"
 type = "shell"
 command = "$HOME/.local/bin/herdr-unread"
@@ -42,6 +37,12 @@ hide_tab_bar_when_single_tab = true
 prompt_new_tab_name = false
 pane_gaps = false
 show_agent_labels_on_pane_borders = true
+
+[ui.sidebar.spaces]
+row_gap = 1
+
+[ui.sidebar.agents]
+row_gap = 1
 
 [ui.toast]
 delivery = "system"
