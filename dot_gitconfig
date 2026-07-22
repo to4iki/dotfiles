@@ -60,3 +60,5 @@
   syntax-theme = Catppuccin Mocha
 [wt]
   nocd = create
+  hook = $HOME/.local/bin/herdr-git-wt-sync open
+  deletehook = $HOME/.local/bin/herdr-git-wt-sync close

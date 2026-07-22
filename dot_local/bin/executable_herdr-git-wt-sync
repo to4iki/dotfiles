@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# Sync git-wt worktree create/delete with herdr sidebar workspaces.
+#
+# Wired via git-wt hooks (cwd is the target worktree directory):
+#   wt.hook       = $HOME/.local/bin/herdr-git-wt-sync open
+#   wt.deletehook = $HOME/.local/bin/herdr-git-wt-sync close
+#
+# Exits 0 when herdr is unavailable or sync is a no-op, so git-wt
+# create/delete is never blocked by herdr sync failures.
+set -euo pipefail
+
+[[ $# -eq 1 ]] || { echo "usage: herdr-git-wt-sync <open|close>" >&2; exit 2; }
+action=$1
+herdr=${HERDR_BIN_PATH:-herdr}
+
+skip() {
+  echo "herdr-git-wt-sync: $*" >&2
+  exit 0
+}
+
+command -v jq >/dev/null || skip "jq not found"
+command -v "$herdr" >/dev/null || skip "herdr not found"
+
+path=$(pwd -P)
+list=$("$herdr" worktree list --cwd "$path" --json 2>/dev/null) \
+  || skip "herdr unavailable"
+
+case "$action" in
+  open)
+    read -r root_ws repo_root < <(
+      jq -r '[.result.source.source_workspace_id // "", .result.source.repo_root // ""] | @tsv' <<<"$list"
+    )
+    label=$(git branch --show-current 2>/dev/null || true)
+    label=${label:-$(basename "$path")}
+
+    if [[ -n $root_ws ]]; then
+      target=(--workspace "$root_ws")
+    elif [[ -n $repo_root ]]; then
+      target=(--cwd "$repo_root")
+    elif [[ -n ${HERDR_WORKSPACE_ID:-} ]]; then
+      target=(--workspace "$HERDR_WORKSPACE_ID")
+    else
+      skip "no source workspace for $path"
+    fi
+
+    "$herdr" worktree open "${target[@]}" --path "$path" --label "$label" --no-focus >/dev/null \
+      || skip "open failed for $path"
+    echo "herdr-git-wt-sync: opened $label ($path)"
+    ;;
+  close)
+    wsid=$(
+      jq -r --arg p "$path" --arg l "$(pwd)" '
+        .result.worktrees[]?
+        | select(.path == $p or .path == $l)
+        | .open_workspace_id // empty
+      ' <<<"$list" | head -n1
+    )
+    [[ -n $wsid ]] || skip "no open workspace for $path"
+
+    "$herdr" workspace close "$wsid" >/dev/null || skip "close failed for $wsid"
+    echo "herdr-git-wt-sync: closed $wsid ($path)"
+    ;;
+  *)
+    echo "usage: herdr-git-wt-sync <open|close>" >&2
+    exit 2
+    ;;
+esac
