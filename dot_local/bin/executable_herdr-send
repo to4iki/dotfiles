@@ -84,4 +84,4 @@ if [[ -n "$start_line" ]]; then
 fi
 
 # Trailing LF puts the path on its own line without submitting (not Enter).
-herdr agent send "$pane_id" "${payload}"$'\n'
+herdr pane send-text "$pane_id" "${payload}"$'\n' >/dev/null
