@@ -17,14 +17,23 @@ previous_agent = "prefix+,"
 next_agent = "prefix+."
 
 [[keys.command]]
-key = "prefix+ctrl+g"
-type = "pane"
-command = "lazygit"
-
-[[keys.command]]
 key = "prefix+ctrl+h"
 type = "pane"
 command = "hx ."
+
+[[keys.command]]
+key = "prefix+ctrl+g"
+type = "popup"
+command = "lazygit"
+width = "85%"
+height = "85%"
+
+[[keys.command]]
+key = "prefix+ctrl+y"
+type = "popup"
+command = "yazi"
+width = "85%"
+height = "85%"
 
 [[keys.command]]
 key = "prefix+u"
