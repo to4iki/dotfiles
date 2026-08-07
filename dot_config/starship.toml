@@ -15,12 +15,16 @@ error_symbol = '[❯](bold red)'
 truncation_length = 3
 
 [git_branch]
-format = '[$symbol$branch(:$remote_branch)]($style) '
+format = '[$branch(:$remote_branch)]($style) '
 symbol = ''
 
 [git_status]
 format = '([$all_status]($style) )'
 style = 'bold yellow'
+ahead = ''
+behind = ''
+diverged = ''
+up_to_date = ''
 untracked = ''
 stashed = ''
 renamed = ''
