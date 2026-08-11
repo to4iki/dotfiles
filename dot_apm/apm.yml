@@ -5,10 +5,10 @@ targets:
   - claude
 dependencies:
   apm:
-    - mattpocock/skills/skills/productivity/grilling#170ad48655825783d0193e850e31a9aac957bb95
-    - to4iki/skills/engineering/create-pr#cc2f34bc38ce89a993c89be2b8acb2f6ace0fc8e
-    - to4iki/skills/engineering/git-commit#cc2f34bc38ce89a993c89be2b8acb2f6ace0fc8e
-    - to4iki/skills/engineering/git-wt#cc2f34bc38ce89a993c89be2b8acb2f6ace0fc8e
-    - to4iki/skills/engineering/hunk-session#cc2f34bc38ce89a993c89be2b8acb2f6ace0fc8e
+    - mattpocock/skills/skills/productivity/grilling#84fdeffd12f2ee307994d1eb6feb48173b6e0502
+    - to4iki/skills/engineering/create-pr#b04f00b12292cf6ed31311d306a88e8cb45c4988
+    - to4iki/skills/engineering/git-commit#b04f00b12292cf6ed31311d306a88e8cb45c4988
+    - to4iki/skills/engineering/git-wt#b04f00b12292cf6ed31311d306a88e8cb45c4988
+    - to4iki/skills/engineering/hunk-session#b04f00b12292cf6ed31311d306a88e8cb45c4988
   mcp: []
 scripts: {}
