@@ -15,7 +15,7 @@ alias cat='bat'
 alias less='bat'
 alias find='fd'
 alias grep='rg'
-alias ls='eza --icons'
+alias ls='eza --icons=always'
 
 # History
 HISTFILE=$HOME/.zsh_history
