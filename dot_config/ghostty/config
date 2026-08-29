@@ -22,5 +22,13 @@ cursor-style-blink = false
 
 # Keybind
 keybind = shift+enter=text:\x1b\r
-keybind = alt+left=unbind
-keybind = alt+right=unbind
+
+# herdr: cmd chords -> prefix (ctrl+t) + key
+keybind = cmd+up=text:\x14\x1b[A
+keybind = cmd+down=text:\x14\x1b[B
+keybind = cmd+[=text:\x14p
+keybind = cmd+]=text:\x14n
+keybind = cmd+t=text:\x14c
+keybind = cmd+n=text:\x14N
+keybind = cmd+o=text:\x14o
+keybind = cmd+u=text:\x14u
