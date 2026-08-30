@@ -18,8 +18,10 @@ next_agent = "prefix+."
 
 [[keys.command]]
 key = "prefix+ctrl+h"
-type = "pane"
+type = "popup"
 command = "hx ."
+width = "85%"
+height = "85%"
 
 [[keys.command]]
 key = "prefix+ctrl+g"
@@ -36,22 +38,23 @@ width = "85%"
 height = "85%"
 
 [[keys.command]]
-key = "prefix+ctrl+o"
+key = "prefix+t"
 type = "popup"
-command = "zsh"
-width = "85%"
-height = "85%"
+command = "exec \"${SHELL:-sh}\""
+description = "open scratch terminal"
+width = "80%"
+height = "80%"
 
 [[keys.command]]
 key = "prefix+u"
 type = "plugin_action"
 command = "to4iki.unread-jump.next"
+description = "focus next unread agent"
 
 [ui]
 confirm_close = false
 hide_tab_bar_when_single_tab = true
 prompt_new_tab_name = false
-pane_gaps = false
 show_agent_labels_on_pane_borders = true
 
 [ui.sidebar.spaces]
