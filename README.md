@@ -16,6 +16,7 @@ make secrets-apply
 # Install dependencies
 make install-gh-extensions
 make install-yazi-packages
+make install-herdr-plugins
 mise install
 cd ~/.apm && apm install -g
 ```

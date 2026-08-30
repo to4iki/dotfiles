@@ -44,8 +44,8 @@ height = "85%"
 
 [[keys.command]]
 key = "prefix+u"
-type = "shell"
-command = "$HOME/.local/bin/herdr-unread"
+type = "plugin_action"
+command = "to4iki.unread-jump.next"
 
 [ui]
 confirm_close = false

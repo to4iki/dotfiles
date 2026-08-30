@@ -12,3 +12,4 @@ chezmoi dotfiles 管理の運用についてまとめる。
 - `make secrets-apply` - 1passwordで管理しているシークレットを反映
 - `make install-gh-extensions` - ghコマンドのエクステンションをインストールする
 - `make install-yazi-packages` - yaziパッケージをインストール
+- `make install-herdr-plugins` - herdrプラグインをインストールする

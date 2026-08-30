@@ -15,3 +15,6 @@ install-yazi-packages:
 	ya pkg add yazi-rs/flavors:catppuccin-mocha
 	ya pkg add yazi-rs/plugins:smart-enter
 	ya pkg add yazi-rs/plugins:git
+
+install-herdr-plugins:
+	herdr plugin install to4iki/herdr-unread-jump
