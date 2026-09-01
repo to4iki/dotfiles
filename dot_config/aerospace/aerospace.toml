@@ -55,6 +55,9 @@ alt-shift-l = 'move right'
 alt-minus = 'resize smart -50'
 alt-equal = 'resize smart +50'
 
+alt-leftSquareBracket = 'workspace --wrap-around prev'
+alt-rightSquareBracket = 'workspace --wrap-around next'
+
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
