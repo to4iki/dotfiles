@@ -30,5 +30,6 @@ keybind = cmd+[=text:\x14p
 keybind = cmd+]=text:\x14n
 keybind = cmd+t=text:\x14c
 keybind = cmd+n=text:\x14N
+keybind = cmd+b=text:\x14b
 keybind = cmd+o=text:\x14o
 keybind = cmd+u=text:\x14u

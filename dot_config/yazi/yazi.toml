@@ -1,3 +1,7 @@
+[mgr]
+show_hidden = true
+
+# git.yazi
 # https://github.com/yazi-rs/plugins/tree/main/git.yazi
 [[plugin.prepend_fetchers]]
 url = "*"
