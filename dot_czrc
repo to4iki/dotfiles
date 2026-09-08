@@ -1,0 +1,5 @@
+{
+  "$schema": "https://cz-git.qbb.sh/schema/cz-git.json",
+  "useEmoji": false,
+  "upperCaseSubject": false
+}
