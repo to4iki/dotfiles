@@ -1,3 +1,10 @@
 theme = "catppuccin-mocha"
 menu_bar = false
 agent_notes = true
+mode = "auto"
+line_numbers = true
+wrap_lines = false
+hunk_headers = true
+animations = false
+copy_decorations = false
+cursor_line = "row"

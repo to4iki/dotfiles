@@ -11,3 +11,6 @@ plans/
 # Git Worktree
 .wt/
 .claude/worktrees/
+
+# Docs
+*learning*
