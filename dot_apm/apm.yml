@@ -5,7 +5,6 @@ targets:
   - claude
 dependencies:
   apm:
-    - mattpocock/skills/skills/productivity/grilling#84fdeffd12f2ee307994d1eb6feb48173b6e0502
     - to4iki/skills/engineering/create-pr#b04f00b12292cf6ed31311d306a88e8cb45c4988
     - to4iki/skills/engineering/git-commit#b04f00b12292cf6ed31311d306a88e8cb45c4988
     - to4iki/skills/engineering/git-wt#b04f00b12292cf6ed31311d306a88e8cb45c4988
