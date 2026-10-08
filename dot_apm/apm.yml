@@ -9,5 +9,6 @@ dependencies:
     - to4iki/skills/engineering/git-commit#b04f00b12292cf6ed31311d306a88e8cb45c4988
     - to4iki/skills/engineering/git-wt#b04f00b12292cf6ed31311d306a88e8cb45c4988
     - to4iki/skills/engineering/hunk-session#b04f00b12292cf6ed31311d306a88e8cb45c4988
+    - humanlayer/skills/plugins/show-me/skills/show-me#ca7c8088db69e315a8b2deea43820270457f8f3c
   mcp: []
 scripts: {}
